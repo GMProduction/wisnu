@@ -14,7 +14,7 @@ class CreateTAdvokatsTable extends Migration
     public function up()
     {
         Schema::create('t_advokats', function (Blueprint $table) {
-            $table->mediumInteger('id_advokat')->primary();
+            $table->bigInteger('id_advokat')->primary();
             $table->string('nama_advokat','25');
             $table->string('alamat','25');
             $table->string('tempat_lahir','25');
@@ -25,9 +25,9 @@ class CreateTAdvokatsTable extends Migration
         });
 
         Schema::create('t_kasus', function (Blueprint $table) {
-            $table->id();
-            $table->mediumInteger('no_registrasi');
-            $table->mediumInteger('no_identitas');
+            $table->bigInteger('id_kasus')->primary();
+            $table->bigInteger('no_registrasi')->unsigned();
+            $table->bigInteger('no_identitas')->unsigned();
             $table->string('nama_pemohon', 25);
             $table->string('jenis_kasus', 25);
             $table->string('layanan', 25);
