@@ -11,7 +11,7 @@ class t_advokat extends Model
     protected  $primaryKey = 'id_advokat';
 
     protected $fillable = [
-        'id_advokad',
+        'id_advokat',
         'nama_advokat',
         'alamat',
         'tempat_lahir',
