@@ -9,14 +9,15 @@
     <title>ADMIN</title>
     <!-- Favicon -->
 {{--    <link rel="icon" href="../assets/img/brand/favicon.png" type="image/png">--}}
-    <!-- Fonts -->
+<!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
     <!-- Icons -->
-    <link rel="stylesheet" href="../assets/vendor/nucleo/css/nucleo.css" type="text/css">
-    <link rel="stylesheet" href="../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
+    <link rel="stylesheet" href="{{asset('assets/vendor/nucleo/css/nucleo.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css')}}"
+          type="text/css">
     <!-- Page plugins -->
     <!-- Argon CSS -->
-    <link rel="stylesheet" href="../assets/css/argon.css?v=1.2.0" type="text/css">
+    <link rel="stylesheet" href="{{asset('/assets/css/argon.css?v=1.2.0')}}" type="text/css">
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
@@ -26,8 +27,8 @@
     <div class="scrollbar-inner">
         <!-- Brand -->
         <div class="sidenav-header" style="margin-top: 20px; margin-left: 24px; height: 40px; text-align: start">
-            <img src="../assets/img/brand/blue.png" class="navbar-brand-img" alt="...">
-            <a> IKS</a>
+            {{--            <img src="../assets/img/brand/blue.png" class="navbar-brand-img" alt="...">--}}
+            <a> WISNU</a>
         </div>
         <div class="navbar-inner">
             <!-- Collapse -->
@@ -35,63 +36,46 @@
                 <!-- Nav items -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/">
-                            <i data-feather="file-plus"></i>
+                        <a class="nav-link active" href="/admin">
+                            <i data-feather="menu"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Dashboard</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="/">
-                            <i data-feather="file-plus"></i>
+                        <a class="nav-link active" href="/admin/pemohon">
+                            <i data-feather="user"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Pemohon</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="/">
-                            <i data-feather="file-plus"></i>
+                        <a class="nav-link active" href="/admin/kasus">
+                            <i data-feather="book"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Kasus</span>
                         </a>
                     </li>
 
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/admin/advokat">
+                            <i data-feather="smile"></i>
+                            <span class="nav-link-text" style="margin-left: 10px">Advokat</span>
+                        </a>
+                    </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="/">
-                            <i data-feather="file-plus"></i>
+                        <a class="nav-link active" href="/admin/jadwal">
+                            <i data-feather="clock"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Jadwal</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="/">
-                            <i data-feather="file-plus"></i>
+                        <a class="nav-link active" href="/admin/Konsultasi">
+                            <i data-feather="message-circle"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Konsultasi</span>
                         </a>
                     </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/">
-                            <i data-feather="file-plus"></i>
-                            <span class="nav-link-text" style="margin-left: 10px">Dashboard</span>
-                        </a>
-                    </li>
-
-                    <!-- Divider -->
-                    <hr class="my-3">
-
-                    <!-- Navigation -->
-                    <ul class="navbar-nav mb-md-3">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" target="_blank">
-                                <i class="text-red " data-feather="log-out"></i>
-                                <span class="nav-link-text text-red" style="margin-left: 10px">Log out</span>
-                            </a>
-                        </li>
-                    </ul>
-
-
-
                 </ul>
                 <!-- Divider -->
                 <hr class="my-3">
@@ -99,23 +83,9 @@
                 <!-- Navigation -->
                 <ul class="navbar-nav mb-md-3">
                     <li class="nav-item">
-                        <a class="nav-link"
-                           href="/laporanlelang">
-                            <i data-feather="clipboard"></i>
-                            <span class="nav-link-text" style="margin-left: 10px">Laporan</span>
-                        </a>
-                    </li>
-                </ul>
-
-                <!-- Divider -->
-                <hr class="my-3">
-
-                <!-- Navigation -->
-                <ul class="navbar-nav mb-md-3">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" target="_blank">
+                        <a class="nav-link" href="#" target="/logout">
                             <i class="text-red " data-feather="log-out"></i>
-                            <span class="nav-link-text text-red" style="margin-left: 10px">Log out</span>
+                            <span class="nav-link-text text-red" style="margin-left: 10px">keluar</span>
                         </a>
                     </li>
                 </ul>
@@ -154,9 +124,7 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
-
                         </div>
                     </li>
                 </ul>
@@ -176,7 +144,7 @@
                         <div class="dropdown-menu  dropdown-menu-right ">
 
                             <a href="#!" class="dropdown-item">
-                                <i class="ni ni-user-run"></i>
+                                <i class="ni ni-admin-run"></i>
                                 <span>Logout</span>
                             </a>
                         </div>
@@ -196,7 +164,7 @@
             <div class="col-lg-6">
                 <div class="copyright text-center  text-lg-left  text-muted">
                     &copy; 2020 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1"
-                                   target="_blank">Dodik</a>
+                                   target="_blank">Wisnu</a>
                 </div>
             </div>
 
@@ -205,16 +173,16 @@
 </div>
 <!-- Argon Scripts -->
 <!-- Core -->
-<script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
-<script src="../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../assets/vendor/js-cookie/js.cookie.js"></script>
-<script src="../assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-<script src="../assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+<script src="{{asset('assets/vendor/jquery/dist/jquery.min.js')}}"></script>
+<script src="{{asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.jss')}}"></script>
+<script src="{{asset('assets/vendor/js-cookie/js.cookie.js')}}"></script>
+<script src="{{asset('assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js')}}"></script>
+<script src="{{asset('assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js')}}"></script>
 <!-- Optional JS -->
-<script src="../assets/vendor/chart.js/dist/Chart.min.js"></script>
-<script src="../assets/vendor/chart.js/dist/Chart.extension.js"></script>
+<script src="{{asset('assets/vendor/chart.js/dist/Chart.min.js')}}"></script>
+<script src="{{asset('assets/vendor/chart.js/dist/Chart.extension.js')}}"></script>
 <!-- Argon JS -->
-<script src="../assets/js/argon.js?v=1.2.0"></script>
+<script src="{{asset('assets/js/argon.js?v=1.2.0')}}"></script>
 <script>
     feather.replace()
 </script>
