@@ -37,18 +37,15 @@
                                     <div class="form-group col-lg-12">
                                         <label for="jenisKasus">Jenis kasus</label>
                                         <select class="form-control" id="jenisKasus" name="jenisKasus">
-                                            <option value="1">1</option>
-                                            <option>2</option>
-                                            <option>3</option>
+                                            <option value="perdana">Perdana</option>
+                                            <option value="perdata">Perdata</option>
                                         </select>
                                     </div>
 
                                     <div class="form-group col-lg-12">
                                         <label for="layanan">Layanan</label>
                                         <select class="form-control" id="layanan" name="layanan">
-                                            <option value="1">1</option>
-                                            <option>2</option>
-                                            <option>3</option>
+                                            <option value="konsultasi">Konsultasi</option>
                                         </select>
                                     </div>
 
