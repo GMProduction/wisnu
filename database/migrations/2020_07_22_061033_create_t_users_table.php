@@ -13,7 +13,7 @@ class CreateTUsersTable extends Migration
      */
     public function up()
     {
-        Schema::drop('t_users');
+//        Schema::drop('t_users');
     }
 
     /**

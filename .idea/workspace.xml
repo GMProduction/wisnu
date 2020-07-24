@@ -2,31 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="219642ee-9ae4-43c4-a8d8-d8e769e62849" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/LaporanController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/advokat/advokat.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/advokat/cetak.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/advokat/tambahadvokat.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/jadwal/cetak.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/jadwal/detailjadwal.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/jadwal/jadwal.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/jadwal/tambahjadwal.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/kasus/cetak.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/kasus/kasus.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/kasus/kasusdetail.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pemohon/cetak.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pemohon/pemohon.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/jadwal/jadwal.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/wisnu.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/wisnu.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/base.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/base.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/base.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/base.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/kasus/tambahkasus.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/kasus/tambahkasus.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_22_061033_create_t_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_22_061033_create_t_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_22_061319_edit_variable.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_22_061319_edit_variable.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
