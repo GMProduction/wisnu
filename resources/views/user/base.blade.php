@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{asset('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css')}}" type="text/css">
     <!-- Page plugins -->
     <!-- Argon CSS -->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/DataTables/datatables.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('/assets/css/argon.css?v=1.2.0')}}" type="text/css">
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
@@ -64,7 +65,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="/user/Konsultasi">
+                        <a class="nav-link active" href="/user/konsultasi">
                             <i data-feather="message-circle"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Konsultasi</span>
                         </a>
@@ -177,6 +178,7 @@
 <script src="{{asset('assets/vendor/chart.js/dist/Chart.extension.js')}}"></script>
 <!-- Argon JS -->
 <script src="{{asset('assets/js/argon.js?v=1.2.0')}}"></script>
+<script type="text/javascript" src="{{asset('DataTables/datatables.min.js')}}"></script>
 <script>
     feather.replace()
 </script>

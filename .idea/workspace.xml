@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="219642ee-9ae4-43c4-a8d8-d8e769e62849" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/assets/img/theme/chatwa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/user/konsultasi/konsultasi.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/base.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/base.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/base.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/base.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/kasus/tambahkasus.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/kasus/tambahkasus.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,18 +146,18 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/jadwal" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets/img/theme" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\PROJECT\WEBSITE\cilikan\wisnu\resources\views\user\kasus" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\PROJECT\WEBSITE\cilikan\wisnu\public\assets\img\theme" />
+      <recent name="C:\PROJECT\WEBSITE\cilikan\wisnu\resources\views\user\konsultasi" />
       <recent name="C:\PROJECT\WEBSITE\cilikan\wisnu\resources\views\admin\jadwal" />
       <recent name="C:\PROJECT\WEBSITE\cilikan\wisnu\resources\views\admin\advokat" />
       <recent name="C:\PROJECT\WEBSITE\cilikan\wisnu\resources\views\admin\kasus" />
-      <recent name="C:\PROJECT\WEBSITE\cilikan\wisnu\resources\views\admin\pemohon" />
-      <recent name="C:\PROJECT\WEBSITE\cilikan\wisnu\app\Http\Controllers" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\PROJECT\WEBSITE\cilikan\wisnu\resources\views\user\kasus" />
     </key>
   </component>
   <component name="RunManager">
@@ -187,7 +193,7 @@
       <workItem from="1595427857721" duration="8069000" />
       <workItem from="1595480431030" duration="10165000" />
       <workItem from="1595496011024" duration="16000" />
-      <workItem from="1595565670694" duration="1106000" />
+      <workItem from="1595565670694" duration="4975000" />
     </task>
     <task id="LOCAL-00001" summary="tampilan user">
       <created>1595437624720</created>
@@ -203,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595495953241</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="tampilan admin &amp; user">
+      <created>1595566797706</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1595566797706</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,25 +225,26 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="tampilan user" />
     <MESSAGE value="tampilan admin" />
-    <option name="LAST_COMMIT_MESSAGE" value="tampilan admin" />
+    <MESSAGE value="tampilan admin &amp; user" />
+    <option name="LAST_COMMIT_MESSAGE" value="tampilan admin &amp; user" />
   </component>
   <component name="WindowStateProjectService">
     <state x="350" y="71" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1595398847484">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="350" y="71" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738@0.0.1366.738" timestamp="1595398847484" />
-    <state x="259" y="0" key="CommitChangelistDialog2" timestamp="1595495952430">
+    <state x="259" y="0" key="CommitChangelistDialog2" timestamp="1595566796227">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="259" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1595495952430" />
+    <state x="259" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1595566796227" />
     <state x="413" y="71" key="FileChooserDialogImpl" timestamp="1595350341941">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="413" y="71" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1595350341941" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1595495420562">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1595570783612">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1360.728@0.0.1360.728" timestamp="1595495420562" />
+    <state width="498" height="446" key="SwitcherDM/0.0.1360.728@0.0.1360.728" timestamp="1595570783612" />
     <state x="376" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1595565710859">
       <screen x="0" y="0" width="1360" height="728" />
     </state>

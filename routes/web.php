@@ -45,6 +45,9 @@ Route::get('/user/jadwal', function () {
     return view('user/jadwal');
 });
 
+Route::get('/user/konsultasi', function () {
+    return view('user/konsultasi/konsultasi');
+});
 
 
 
