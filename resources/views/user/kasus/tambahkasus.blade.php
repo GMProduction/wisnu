@@ -11,7 +11,7 @@
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="#">Data Kasus</a></li>
+                                <li class="breadcrumb-item"><a href="/user/kasus">Data Kasus</a></li>
                                 <li class="breadcrumb-item"><a href="#">Tambah Data</a></li>
                             </ol>
                         </nav>
@@ -29,7 +29,8 @@
                 <div class="card">
 
                     <div class="card-body">
-                        <form>
+                        <form action="/user/kasus/store" method="POST">
+                            @csrf
                             <h6 class="heading-small text-muted mb-4">Data</h6>
                             <div class="pl-lg-4">
                                 <div class="row">
@@ -63,7 +64,7 @@
                             <hr class="my-4"/>
                             <!-- Description -->
                             <div class="col-12 text-right">
-                                <a href="#!" class="btn btn-lg btn-primary">Simpan</a>
+                                <button type="submit" class="btn btn-lg btn-primary">Simpan</button>
                             </div>
                         </form>
                     </div>
