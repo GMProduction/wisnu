@@ -13,9 +13,9 @@ class CreateTPermohonansTable extends Migration
      */
     public function up()
     {
-        Schema::create('t_permohonan', function (Blueprint $table) {
-            $table->bigInteger('id_permohonan');
-            $table->bigInteger('no_registrasi');
+        Schema::create('t_permohonans', function (Blueprint $table) {
+            $table->bigInteger('id_permohonan')->primary();
+            $table->bigInteger('no_registrasi')->unsigned();;
             $table->longText('keterangan_permohonan');
             $table->longText('alasan');
             $table->timestamps();

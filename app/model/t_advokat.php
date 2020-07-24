@@ -20,4 +20,6 @@ class t_advokat extends Model
         'email',
     ];
 
+
+
 }

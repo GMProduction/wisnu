@@ -13,10 +13,10 @@ class CreateTPemohonsTable extends Migration
      */
     public function up()
     {
-        Schema::create('t_pemohon', function (Blueprint $table) {
+        Schema::create('t_pemohons', function (Blueprint $table) {
             //
-            $table->id();
-            $table->integer('no_identitas')->unique();
+            $table->bigInteger('id_pemohon')->primary();
+            $table->bigInteger('no_identitas')->unique();
             $table->string('nama_pemohon', 25);
             $table->string('jenis_kelamin', 25);
             $table->string('alamat', 25);

@@ -13,7 +13,17 @@ class CreateTUsersTable extends Migration
      */
     public function up()
     {
-//        Schema::drop('t_users');
+        Schema::create('t_users', function (Blueprint $table) {
+            //
+            $table->bigInteger('id_user')->primary();
+            $table->string('username', '25');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password', 25);
+            $table->string('level', 25);
+            $table->rememberToken();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +33,6 @@ class CreateTUsersTable extends Migration
      */
     public function down()
     {
-//        Schema::dropIfExists('t_users');
+        Schema::dropIfExists('t_users');
     }
 }
