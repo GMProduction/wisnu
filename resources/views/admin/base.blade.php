@@ -72,8 +72,6 @@
                             <span class="nav-link-text" style="margin-left: 10px">Jadwal</span>
                         </a>
                     </li>
-
-
                 </ul>
                 <!-- Divider -->
                 <hr class="my-3">
