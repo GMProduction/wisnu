@@ -2,14 +2,13 @@
 
 namespace App\model;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class t_kasus extends Model
 {
     //
-    protected $table = "t_kasus";
-
-    protected $primaryKey = 'id';
+    protected $table = 't_kasus';
 
     protected $fillable = [
         'no_registrasi',
@@ -19,11 +18,8 @@ class t_kasus extends Model
         'layanan',
         'kronologi_kasus',
     ];
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function pemohon(){
-        return $this->belongsTo(t_pemohon::class);
+    public function pemohon()
+    {
+        return $this->belongsTo(User::class, 'id_pemohon');
     }
 }
