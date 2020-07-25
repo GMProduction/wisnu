@@ -26,8 +26,8 @@ class CreateTAdvokatsTable extends Migration
 
         Schema::create('t_kasus', function (Blueprint $table) {
             $table->bigInteger('id_kasus')->primary();
-            $table->bigInteger('no_registrasi')->unsigned();
-            $table->bigInteger('no_identitas')->unsigned();
+            $table->bigInteger('no_registrasi')->unique();
+            $table->bigInteger('no_identitas')->unsigned()->index();
             $table->string('nama_pemohon', 25);
             $table->string('jenis_kasus', 25);
             $table->string('layanan', 25);

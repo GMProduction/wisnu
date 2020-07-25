@@ -11,14 +11,15 @@ class t_pemohon extends Model
 
     use Notifiable;
 
-    protected $table = "t_pemohon";
-    protected $primaryKey = 'id';
+    protected $table = "t_pemohons";
+    protected $primaryKey = 'id_pemohons';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
+        'id_pemohons',
         'no_identitas',
         'nama_pemohon',
         'jenis_kelamin',
@@ -32,6 +33,13 @@ class t_pemohon extends Model
         'no_telepon',
         'email',
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function kasus(){
+        return $this->hasMany(t_kasus::class);
+    }
 
     /**
      * The attributes that should be hidden for arrays.
