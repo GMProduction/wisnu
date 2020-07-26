@@ -50,7 +50,6 @@ Route::get('/user/konsultasi', function () {
 });
 
 
-
 Route::get('/admin', function () {
     return view('admin/dashboard');
 });
@@ -88,3 +87,14 @@ Route::get('/admin/pemohon/cetak', 'LaporanController@cetakAdminDataPemohon')->n
 Route::get('/admin/kasus/cetak', 'LaporanController@cetakAdminDataKasus')->name('admindatakasuscetak');
 Route::get('/admin/advokat/cetak', 'LaporanController@cetakAdminDataAdvokat')->name('admindataadvokatcetak');
 Route::get('/admin/jadwal/cetak', 'LaporanController@cetakAdminDataJadwal')->name('admindataadvokatjadwal');
+
+Route::get('/register', 'Auth\AuthController@index');
+Route::post('/post-register', 'Auth\AuthController@register');
+
+Route::get('/user', 'User\MainController@index');
+Route::get('/user/pemohon', 'User\PemohonController@index');
+Route::post('/user/pemohon/update', 'User\PemohonController@updateProfile');
+
+Route::get('/user/kasus', 'User\KasusController@index');
+Route::get('/user/kasus/add', 'User\KasusController@addForm');
+Route::post('/user/kasus/store', 'User\KasusController@store');

@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\model\t_kasus;
+use App\model\t_pemohon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -36,4 +38,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function pemohon()
+    {
+        return $this->hasOne(t_pemohon::class);
+    }
+
+    public function kasus()
+    {
+        return $this->hasMany(t_kasus::class);
+    }
 }

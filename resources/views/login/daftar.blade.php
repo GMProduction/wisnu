@@ -12,10 +12,10 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
     <!-- Icons -->
-    <link rel="stylesheet" href="../assets/vendor/nucleo/css/nucleo.css" type="text/css">
-    <link rel="stylesheet" href="../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/assets/vendor/nucleo/css/nucleo.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}.." type="text/css">
     <!-- Argon CSS -->
-    <link rel="stylesheet" href="../assets/css/argon.css?v=1.2.0" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/assets/css/argon.css?v=1.2.0') }}" type="text/css">
 </head>
 
 <body class="bg-default">
@@ -48,13 +48,14 @@
                         <div class="text-center text-muted mb-4">
                             <small>Isi data dengan benar</small>
                         </div>
-                        <form role="form">
+                        <form method="POST" action="/post-register">
+                            @csrf
                             <div class="form-group mb-3">
                                 <div class="input-group input-group-merge input-group-alternative">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                     </div>
-                                    <input class="form-control" id="email" name="email" placeholder="Email" type="email">
+                                    <input class="form-control" id="username" name="username" placeholder="Username" type="text">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -74,7 +75,7 @@
                                 </div>
                             </div>
                             <div class="text-center">
-                                <button type="button" class="btn btn-primary my-4" style="width: 100%">Daftar</button>
+                                <button type="submit" class="btn btn-primary my-4" style="width: 100%">Daftar</button>
                             </div>
                         </form>
 
@@ -88,14 +89,14 @@
 
 <!-- Argon Scripts -->
 <!-- Core -->
-<script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
-<script src="../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../assets/vendor/js-cookie/js.cookie.js"></script>
-<script src="../assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-<script src="../assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+<script src="{{ asset('/assets/vendor/jquery/dist/jquery.min.js') }}"></script>
+<script src="{{ asset('/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('/assets/vendor/js-cookie/js.cookie.js') }}"></script>
+<script src="{{ asset('/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js') }}"></script>
+<script src="{{ asset('/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <!-- Argon JS -->
-<script src="../assets/js/argon.js?v=1.2.0"></script>
+<script src="{{ asset('/assets/js/argon.js?v=1.2.0') }}"></script>
 </body>
 
 </html>
