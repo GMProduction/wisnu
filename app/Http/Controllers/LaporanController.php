@@ -20,7 +20,7 @@ class LaporanController extends Controller
     {
 
         $pdf = \App::make('dompdf.wrapper');
-        $pdf->loadHTML($this->adminDataPemohon($request));
+        $pdf->loadHTML($this->adminDataPemohon($request))->setPaper('f4', 'landscape');
         return $pdf->stream();
 //        return $this->adminDataPemohon($request);
     }
@@ -62,4 +62,51 @@ class LaporanController extends Controller
         return $pdf->stream();
 //        return $this->adminDataAdvokat($request);
     }
+
+    public function adminDatajadwal(Request $request)
+    {
+//        $caridata = $request->caridata;
+//        $status = $request->status;
+//        $mitra = mitraModel::where('status', 'LIKE', '%' . $status . '%')
+//            ->where(function ($q) use ($caridata) {
+//                $q->where('username', 'LIKE', '%' . $caridata . '%')
+//                    ->orwhere('email', 'LIKE', '%' . $caridata . '%')
+//                    ->orwhere('noHp', 'LIKE', '%' . $caridata . '%')
+//                    ->orwhere('alamat', 'LIKE', '%' . $caridata . '%');
+//            })
+//            ->get();
+        return view('admin.jadwal.cetak')->with(['mitra' => "datanya"]);
+    }
+
+    public function cetakAdminDatajadwal(Request $request)
+    {
+
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($this->adminDatajadwal($request))->setPaper('f4', 'landscape');
+        return $pdf->stream();
+    }
+
+    public function adminDataJadwalDetail(Request $request)
+    {
+//        $caridata = $request->caridata;
+//        $status = $request->status;
+//        $mitra = mitraModel::where('status', 'LIKE', '%' . $status . '%')
+//            ->where(function ($q) use ($caridata) {
+//                $q->where('username', 'LIKE', '%' . $caridata . '%')
+//                    ->orwhere('email', 'LIKE', '%' . $caridata . '%')
+//                    ->orwhere('noHp', 'LIKE', '%' . $caridata . '%')
+//                    ->orwhere('alamat', 'LIKE', '%' . $caridata . '%');
+//            })
+//            ->get();
+        return view('admin.jadwal.cetakDetail')->with(['mitra' => "datanya"]);
+    }
+
+    public function cetakAdminDataJadwalDetail(Request $request)
+    {
+
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($this->adminDataJadwalDetail($request))->setPaper('b4', 'potrait');
+        return $pdf->stream();
+    }
+
 }
