@@ -22,4 +22,8 @@ class t_kasus extends Model
     {
         return $this->belongsTo(User::class, 'id_pemohon');
     }
+
+    public function jadwal(){
+        return $this->hasOne(t_jadwal::class,'no_registrasi');
+    }
 }

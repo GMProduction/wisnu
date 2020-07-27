@@ -52,4 +52,28 @@ class AuthController extends CustomController
         Auth::loginUsingId($user->id);
         return redirect('/user');
     }
+
+    public function login()
+    {
+        $credentials = [
+            'username' => $this->postField('username'),
+            'password' => $this->postField('password')
+        ];
+
+
+        if ($this->isAuth($credentials)) {
+            $level = Auth::user()->level;
+            if($level == 'admin'){
+                return redirect('/admin');
+            }
+            return redirect('/user');
+        }
+        return redirect()->back()->with(['fail' => 'Periksa Username & Password']);
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/');
+    }
 }
