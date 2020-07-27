@@ -107,15 +107,15 @@
                             <!-- List group -->
                             <div class="list-group list-group-flush">
                                 <div class="row align-items-center">
-                                    <div class="col-auto">
-                                        <!-- Avatar -->
-                                        <img alt="Image placeholder" src="../assets/img/theme/team-1.jpg"
-                                             class="avatar rounded-circle">
-                                    </div>
+{{--                                    <div class="col-auto">--}}
+{{--                                        <!-- Avatar -->--}}
+{{--                                        <img alt="Image placeholder" src="../assets/img/theme/team-1.jpg"--}}
+{{--                                             class="avatar rounded-circle">--}}
+{{--                                    </div>--}}
                                     <div class="col ml--2">
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div>
-                                                <h4 class="mb-0 text-sm">John Snow</h4>
+                                                <h4 class="mb-0 text-sm">Hi, {{auth()->user()->username}}</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -129,11 +129,11 @@
                         <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
                            aria-expanded="false">
                             <div class="media align-items-center">
-                  <span class="avatar avatar-sm rounded-circle">
-                    <img alt="Image placeholder" src="../assets/img/theme/team-4.jpg">
-                  </span>
+{{--                  <span class="avatar avatar-sm rounded-circle">--}}
+{{--                    <img alt="Image placeholder" src="../assets/img/theme/team-4.jpg">--}}
+{{--                  </span>--}}
                                 <div class="media-body  ml-2  d-none d-lg-block">
-                                    <span class="mb-0 text-sm  font-weight-bold">John Snow</span>
+                                    <span class="mb-0 text-sm  font-weight-bold">Hi, {{auth()->user()->username}}</span>
                                 </div>
                             </div>
                         </a>

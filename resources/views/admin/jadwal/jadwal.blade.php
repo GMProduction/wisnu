@@ -15,10 +15,10 @@
                             </ol>
                         </nav>
                     </div>
-                    <div class="col-lg-6 col-5 text-right">
-                        <a href="/admin/tambahjadwal" class="btn btn-md btn-neutral">Tambah Data</a>
-                        <a href="/admin/jadwal/cetak" class="btn btn-md btn-neutral">Cetak</a>
-                    </div>
+{{--                    <div class="col-lg-6 col-5 text-right">--}}
+{{--                        <a href="/admin/tambahjadwal" class="btn btn-md btn-neutral">Tambah Data</a>--}}
+{{--                        --}}
+{{--                    </div>--}}
                 </div>
             </div>
         </div>
@@ -55,18 +55,8 @@
                                     <td>{{$j->jadwal->pemohon->pemohon->nama_pemohon }}</td>
                                     <td>{{$j->layanan}}</td>
                                     <td>{{$j->tanggal}}</td>
-                                    <td class="text-right">
-                                        <div class="dropdown">
-                                            <a class="btn btn-sm btn-icon-only text-light" href="#" role="button"
-                                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="fas fa-ellipsis-v"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                <a class="dropdown-item" href="/admin/jadwal/detail/{{$j->id}}">Detail</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
-                                        </div>
+                                    <td class="text-center">
+                                        <a class="btn btn-sm" href="/admin/jadwal/detail/{{$j->id}}">Detail</a>
                                     </td>
                                 </tr>
                             @endforeach

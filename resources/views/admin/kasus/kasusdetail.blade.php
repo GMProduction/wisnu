@@ -135,6 +135,16 @@
     <div class="modal fade" id="modalTerima" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
+                @if(\Session::has('alert-failed'))
+                    <div class="alert alert-failed">
+                        <div>{{Session::get('alert-failed')}}</div>
+                    </div>
+                @endif
+                @if(\Session::has('alert-success'))
+                    <div class="alert alert-success">
+                        <div>{{Session::get('alert-success')}}</div>
+                    </div>
+                @endif
                 <form method="post">
                     @csrf
                     <input id="id" name="id" value="{{$kasus->no_registrasi}}" hidden>
@@ -174,7 +184,7 @@
                                            class="form-control">
                                 </div>
                             </div>
-                            <div class="col-lg-1">
+                            <div class="col-lg-2">
                                 <div class="form-group">
                                     <label class="form-control-label" for="jam">Jam</label>
                                     <select class="form-control" name="jam" id="jam">
@@ -185,7 +195,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-lg-1">
+                            <div class="col-lg-2">
                                 <div class="form-group">
                                     <label class="form-control-label" for="jam">Menit</label>
                                     <select class="form-control" id="menit" name="menit">
@@ -195,7 +205,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-4">
                                 <div class="form-group">
                                     <label class="form-control-label" for="layanan">Layanan</label>
                                     <input type="text" id="layanan" name="layanan" value="" required
@@ -209,6 +219,7 @@
                         <button type="submit" class="btn btn-primary">Save changes</button>
                     </div>
                 </form>
+
             </div>
         </div>
     </div>

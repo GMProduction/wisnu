@@ -292,7 +292,6 @@
                                 <tr>
                                     <td>
                                         <p>Hi {{ $nama }}</p>
-                                        <p>Terimakasih telah mengirimkan email :)</p>
 
                                         <table border="0" cellpadding="0" cellspacing="0">
                                             <tbody>
@@ -302,11 +301,11 @@
                                                         <tbody>
                                                         <tr>
                                                             <td> <div class="container">
-                                                                    <center><p>Pesanmu Yaitu :</p></center>
+                                                                    <center><p>Pesan :</p></center>
                                                                     <hr>
-                                                                    <center><p>{{ $pesan }}</p></center>
+                                                                    <center><p> Kasus anda kami {{ $pesan }}, silahkan lihat dashoard - untuk informasi lebih lanjut</p></center>
                                                                     <hr>
-                                                                    <center><p>Telah Disampaikan! <br> Terimakasih telah menghubungi kami!</p></center>
+                                                                    <center><p>Pengirim <br> Admin</p></center>
                                                                 </div>
                                                             </td>
                                                         </tr>
@@ -328,21 +327,21 @@
                 </table>
 
                 <!-- START FOOTER -->
-                <div class="footer">
-                    <table border="0" cellpadding="0" cellspacing="0">
-                        <tr>
-                            <td class="content-block">
-                                <span class="apple-link">Anak IT Inc</span>
-                                {{--<br> Don't like these emails? <a href="http://i.imgur.com/CScmqnj.gif">Unsubscribe</a>.--}}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="content-block powered-by">
-                                Powered by <a href="http://medium.com/@kiddy.xyz">Anak IT</a>.
-                            </td>
-                        </tr>
-                    </table>
-                </div>
+{{--                <div class="footer">--}}
+{{--                    <table border="0" cellpadding="0" cellspacing="0">--}}
+{{--                        <tr>--}}
+{{--                            <td class="content-block">--}}
+{{--                                <span class="apple-link">Anak IT Inc</span>--}}
+{{--                                --}}{{--<br> Don't like these emails? <a href="http://i.imgur.com/CScmqnj.gif">Unsubscribe</a>.--}}
+{{--                            </td>--}}
+{{--                        </tr>--}}
+{{--                        <tr>--}}
+{{--                            <td class="content-block powered-by">--}}
+{{--                                Powered by <a href="http://medium.com/@kiddy.xyz">Anak IT</a>.--}}
+{{--                            </td>--}}
+{{--                        </tr>--}}
+{{--                    </table>--}}
+{{--                </div>--}}
                 <!-- END FOOTER -->
 
                 <!-- END CENTERED WHITE CONTAINER -->

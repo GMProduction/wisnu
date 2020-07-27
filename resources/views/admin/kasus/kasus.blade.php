@@ -16,8 +16,11 @@
                         </nav>
                     </div>
                     <div class="col-lg-6 col-5 text-right">
-{{--                        <a href="/admin/kasus/add" class="btn btn-md btn-neutral">Tambah Data</a>--}}
+                        <a href="/admin/kasus/cetak" class="btn btn-md btn-neutral">Cetak</a>
                     </div>
+{{--                    <div class="col-lg-6 col-5 text-right">--}}
+{{--                        <a href="/admin/kasus/add" class="btn btn-md btn-neutral">Tambah Data</a>--}}
+{{--                    </div>--}}
                 </div>
             </div>
         </div>

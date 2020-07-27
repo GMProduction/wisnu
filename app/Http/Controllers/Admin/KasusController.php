@@ -6,6 +6,8 @@ use App\Helper\CustomController;
 use App\model\t_advokat;
 use App\model\t_jadwal;
 use App\model\t_kasus;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class KasusController extends CustomController
 {
@@ -21,9 +23,24 @@ class KasusController extends CustomController
         return view('admin.kasus.kasus')->with(['kasus' => $kasus]);
     }
 
+    public function sendEmail($email, $nama, $pesan )
+    {
+        try{
+            Mail::send('email', ['nama' => $nama, 'pesan' => $pesan], function ($message) use ($email)
+            {
+                $message->subject('Informasi Kasus');
+                $message->from('portgaz77@gmail.com', 'Kiddy');
+                $message->to($email);
+            });
+            return back()->with('alert-success','Berhasil Kirim Email');
+        }
+        catch (Exception $e){
+            return response (['status' => false,'errors' => $e->getMessage()]);
+        }
+    }
     public function kasusDetail($id){
         $kasus = t_kasus::where('no_registrasi',$id)->with('pemohon.pemohon')->first();
-
+//        dump($kasus->pemohon);die();
         if($this->request->isMethod('POST')){
             $data = [
                 'no_registrasi' => $this->postField('id'),
@@ -46,6 +63,11 @@ class KasusController extends CustomController
             $kasus->status = $data['status'];
             $kasus->alasan = $data['alasan'];
             $kasus->save();
+
+            $email = $kasus->pemohon->pemohon->email;
+            $name = $kasus->pemohon->pemohon->nama_pemohon;
+            $pesan = $data['status'];
+            $this->sendEmail($email,$name,$pesan );
             $data['success'] = 'success';
 //            return $this->kasusDetail($id);
         }
