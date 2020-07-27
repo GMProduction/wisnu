@@ -181,6 +181,7 @@
 <!-- Argon JS -->
 <script src="{{asset('assets/js/argon.js?v=1.2.0')}}"></script>
 <script src="{{asset('assets/js/componen.js')}}"></script>
+<script src="{{asset('assets/js/swal.min.js')}}"></script>
 
 <script>
     feather.replace()
