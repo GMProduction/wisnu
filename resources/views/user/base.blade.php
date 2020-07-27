@@ -36,21 +36,21 @@
                 <!-- Nav items -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/user/">
+                        <a class="nav-link " href="/user/">
                             <i data-feather="menu"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Dashboard</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="/user/pemohon">
+                        <a class="nav-link " id="pemohon" href="/user/pemohon">
                             <i data-feather="user"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Pemohon</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="/user/kasus">
+                        <a class="nav-link " id="kasus" href="/user/kasus">
                             <i data-feather="book"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Kasus</span>
                         </a>
@@ -58,14 +58,14 @@
 
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="/user/Jadwal">
+                        <a class="nav-link " id="jadwal" href="/user/jadwal">
                             <i data-feather="clock"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Jadwal</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="/user/konsultasi">
+                        <a class="nav-link " id="konsultasi" href="/user/konsultasi">
                             <i data-feather="message-circle"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Konsultasi</span>
                         </a>
@@ -78,7 +78,7 @@
                 <!-- Navigation -->
                 <ul class="navbar-nav mb-md-3">
                     <li class="nav-item">
-                        <a class="nav-link" href="#" target="/logout">
+                        <a class="nav-link" href="/logout" target="">
                             <i class="text-red " data-feather="log-out"></i>
                             <span class="nav-link-text text-red" style="margin-left: 10px">keluar</span>
                         </a>
@@ -170,6 +170,8 @@
 <!-- Core -->
 <script src="{{asset('assets/vendor/jquery/dist/jquery.min.js')}}"></script>
 <script src="{{asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.jss')}}"></script>
+<script src="{{asset('assets/DataTables/datatables.js')}}"></script>
+
 <script src="{{asset('assets/vendor/js-cookie/js.cookie.js')}}"></script>
 <script src="{{asset('assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js')}}"></script>
 <script src="{{asset('assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js')}}"></script>
@@ -178,7 +180,8 @@
 <script src="{{asset('assets/vendor/chart.js/dist/Chart.extension.js')}}"></script>
 <!-- Argon JS -->
 <script src="{{asset('assets/js/argon.js?v=1.2.0')}}"></script>
-<script type="text/javascript" src="{{asset('DataTables/datatables.min.js')}}"></script>
+<script src="{{asset('assets/js/componen.js')}}"></script>
+
 <script>
     feather.replace()
 </script>

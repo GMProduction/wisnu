@@ -25,7 +25,9 @@ class KasusController extends CustomController
 
     public function index()
     {
-        $kasus = t_kasus::with('pemohon.pemohon')->get();
+        $user = auth()->user()->id;
+
+        $kasus = t_kasus::where('id_pemohon',$user)->with('pemohon.pemohon')->get();
 //        return $kasus->toArray();
         return view('user.kasus.kasus')->with(['kasus' => $kasus]);
     }

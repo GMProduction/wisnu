@@ -39,35 +39,35 @@
                 <!-- Nav items -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin">
+                        <a class="nav-link " id="" href="/admin">
                             <i data-feather="menu"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Dashboard</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin/pemohon">
+                        <a class="nav-link " id="pemohon" href="/admin/pemohon">
                             <i data-feather="user"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Pemohon</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin/kasus">
+                        <a class="nav-link " id="kasus" href="/admin/kasus">
                             <i data-feather="book"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Kasus</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin/advokat">
+                        <a class="nav-link " id="advokat" href="/admin/advokat">
                             <i data-feather="smile"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Advokat</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin/jadwal">
+                        <a class="nav-link " id="jadwal" href="/admin/jadwal">
                             <i data-feather="clock"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Jadwal</span>
                         </a>
@@ -79,7 +79,7 @@
                 <!-- Navigation -->
                 <ul class="navbar-nav mb-md-3">
                     <li class="nav-item">
-                        <a class="nav-link" href="#" target="/logout">
+                        <a class="nav-link" href="/logout" target="">
                             <i class="text-red " data-feather="log-out"></i>
                             <span class="nav-link-text text-red" style="margin-left: 10px">keluar</span>
                         </a>
@@ -179,7 +179,9 @@
 <script src="{{asset('assets/vendor/chart.js/dist/Chart.extension.js')}}"></script>
 <!-- Argon JS -->
 <script src="{{asset('assets/js/argon.js?v=1.2.0')}}"></script>
-<script type="text/javascript" src="{{asset('DataTables/datatables.min.js')}}"></script>
+<script src="{{asset('assets/js/componen.js')}}"></script>
+<script src="{{asset('assets/js/sweetalert.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/DataTables/datatables.min.js')}}"></script>
 
 <script>
     feather.replace()

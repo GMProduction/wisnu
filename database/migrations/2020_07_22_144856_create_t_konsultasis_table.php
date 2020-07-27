@@ -15,8 +15,8 @@ class CreateTKonsultasisTable extends Migration
     {
         Schema::create('t_konsultasis', function (Blueprint $table) {
             $table->bigInteger('id_konsultasi')->primary();
-            $table->bigInteger('id_jadwal')->unsigned();
-            $table->bigInteger('id_advokat')->unsigned();
+            $table->bigInteger('id_jadwal')->unsigned()->index();
+            $table->bigInteger('id_advokat')->unsigned()->index();
             $table->longText('proses_konsultasi');
             $table->longText('detail_konsultasi');
             $table->timestamps();

@@ -15,9 +15,9 @@ class CreateTJadwalsTable extends Migration
     {
         Schema::create('t_jadwals', function (Blueprint $table) {
             $table->bigInteger('id_jadwal')->primary();
-            $table->bigInteger('no_registrasi')->unsigned();
+            $table->bigInteger('no_registrasi')->unsigned()->index();
             $table->dateTime('tanggal');
-            $table->bigInteger('id_advokat')->unsigned();
+            $table->bigInteger('id_advokat')->unsigned()->index();
             $table->string('layanan', '25');
             $table->timestamps();
         });
