@@ -9,6 +9,7 @@ class t_advokat extends Model
 {
     //
 
+    protected $table = 't_advokats';
     protected $primaryKey = 'id';
 
     protected $fillable = [

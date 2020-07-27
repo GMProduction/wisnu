@@ -21,6 +21,12 @@ class AdvokatController extends CustomController
         return view('admin.advokat.advokat')->with(['advokats' => $advokat]);
     }
 
+    public function delete($id){
+        $advokat = t_advokat::findOrFail($id)->get();
+        $advokat->delete();
+        return redirect()->back()->with(['success' => 'success']);
+    }
+
     public function addForm(){
         $userData = [
             'username' => $this->postField('username'),
@@ -52,7 +58,20 @@ class AdvokatController extends CustomController
     }
 
     public function editAdvokat($id){
-        $advokat = t_advokat::findOrFail($id)->with('useradvokat.useradvokat')->get();
+        $advokat = t_advokat::where('id',$id)->with('useradvokat.useradvokat')->get();
+//        dump($advokat);die();
+        if($this->request->isMethod('POST')){
+            $data = [
+                'nama_advokat' => $this->postField('namaAdvokat'),
+                'alamat' => $this->postField('alamat'),
+                'tempat_lahir' => $this->postField('tempatLahir'),
+                'tanggal_lahir' => $this->postField('tanggalLahir'),
+                'no_telepon' => $this->postField('notelp'),
+                'email' => $this->postField('email'),
+            ];
+            $this->update(t_advokat::class, $data);
+            return redirect()->back()->with(['success' => 'success']);
+        }
         return view('admin.advokat.editadvokat')->with(['advokats' => $advokat]);
 
     }

@@ -37,6 +37,27 @@ class KasusController extends CustomController
         return view('user.kasus.tambahkasus');
     }
 
+    public function editForm($id)
+    {
+//        $kasus = t_kasus::where('id',$id)->get();
+        $kasus = t_kasus::where('no_registrasi',$id)->first();
+
+        if($this->request->isMethod('POST')){
+            $data = [
+                'layanan' => $this->postField('layanan'),
+                'kronologi_kasus' => $this->postField('kronologiKasus'),
+                'jenis_kasus' => $this->postField('jenisKasus'),
+            ];
+            $kasus->layanan = $data['layanan'];
+            $kasus->kronologi_kasus = $data['kronologi_kasus'];
+            $kasus->jenis_kasus = $data['jenis_kasus'];
+            $kasus->save();
+//            $this->update(t_kasus::class,$data);
+            return redirect()->back()->with(['success' => 'success']);
+        }
+        return view('user.kasus.editkasus')->with(['kasus' => $kasus]);
+    }
+
     public function store()
     {
         $data = [

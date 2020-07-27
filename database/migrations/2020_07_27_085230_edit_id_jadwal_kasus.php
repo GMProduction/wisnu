@@ -15,7 +15,7 @@ class EditIdJadwalKasus extends Migration
     {
         Schema::table('t_jadwals', function (Blueprint $table) {
             //
-//            $table->foreign('no_registrasi')->references('id')->on('t_kasus');
+            $table->foreign('no_registrasi')->references('id')->on('t_kasus');
         });
         Schema::table('t_jadwals', function (Blueprint $table) {
             //

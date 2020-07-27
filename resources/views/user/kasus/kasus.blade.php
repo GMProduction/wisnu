@@ -29,7 +29,7 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">Light table</h3>
+                        <h3 class="mb-0">Tabel Kasus</h3>
                     </div>
                     <!-- Light table -->
                     <div class="table-responsive">
@@ -49,7 +49,6 @@
                             </thead>
                             <tbody class="list">
                             @foreach($kasus as $v)
-
                                 <tr>
                                     <td>{{ $loop->index + 1}}</td>
                                     <td>{{ $v->pemohon->pemohon->nama_pemohon }}</td>
@@ -59,18 +58,8 @@
                                     <td>{{ $v->kronologi_kasus }}</td>
                                     <td>{{ $v->status }}</td>
                                     <td>{{ $v->alasan }}</td>
-                                    <td class="text-right">
-                                        <div class="dropdown">
-                                            <a class="btn btn-sm btn-icon-only text-light" href="#" role="button"
-                                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="fas fa-ellipsis-v"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                <a class="dropdown-item" href="">edit</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
-                                        </div>
+                                    <td class="text-center">
+                                        <a class="btn btn-sm" href="/user/kasus/edit/{{$v->no_registrasi}}">Edit</a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -78,7 +67,6 @@
                         </table>
                     </div>
                     <!-- Card footer -->
-
                 </div>
             </div>
         </div>

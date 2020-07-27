@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\model\t_advokat;
 use App\model\t_pemohon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -50,24 +51,15 @@ class LaporanController extends Controller
 
     public function adminDataAdvokat(Request $request)
     {
-//        $caridata = $request->caridata;
-//        $status = $request->status;
-//        $mitra = mitraModel::where('status', 'LIKE', '%' . $status . '%')
-//            ->where(function ($q) use ($caridata) {
-//                $q->where('username', 'LIKE', '%' . $caridata . '%')
-//                    ->orwhere('email', 'LIKE', '%' . $caridata . '%')
-//                    ->orwhere('noHp', 'LIKE', '%' . $caridata . '%')
-//                    ->orwhere('alamat', 'LIKE', '%' . $caridata . '%');
-//            })
-//            ->get();
-        return view('admin.pemohon.cetak')->with(['mitra' => "datanya"]);
+        $advokat = t_advokat::all();
+        return view('admin.advokat.cetak')->with(['advokats' => $advokat]);
     }
 
     public function cetakAdminDataAdvokat(Request $request)
     {
-
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($this->adminDataAdvokat($request));
         return $pdf->stream();
+//        return $this->adminDataAdvokat($request);
     }
 }

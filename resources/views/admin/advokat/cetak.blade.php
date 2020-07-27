@@ -37,25 +37,26 @@
 
 <table class="table table-striped">
     <tr>
-        <th> #</th>
-        <th> ID Lelang</th>
-        <th> Kode Lelang</th>
-        <th> Nama Lelang</th>
-        <th> Link Website</th>
-        <th> Reward</th>
-        <th> Kesulitan</th>
+        <th scope="col">#</th>
+        <th scope="col">Nama Advokat</th>
+        <th scope="col">Alamat</th>
+        <th scope="col">TTL</th>
+        <th scope="col">Hp</th>
+        <th scope="col">Email</th>
     </tr>
-    @php $i=1; @endphp
-{{--    @foreach($mitra as $m)--}}
-{{--        <tr>--}}
-{{--            <td> {{$i++}}</td>--}}
-{{--            <td> {{$m->username}}</td>--}}
-{{--            <td> {{$m->email}}</td>--}}
-{{--            <td> {{$m->noHp}}</td>--}}
-{{--            <td> {{$m->alamat}}</td>--}}
+    </thead>
+    <tbody class="list">
+    @foreach($advokats as $a)
+        <tr>
+            <td>{{ $loop->index + 1}}</td>
+            <td>{{$a->nama_advokat}}</td>
+            <td>{{$a->alamat}}</td>
+            <td>{{$a->tempat_lahir}}, {{$a->tanggal_lahir}}</td>
+            <td>{{$a->no_telepon}}</td>
+            <td>{{$a->email}}</td>
 
-{{--        </tr>--}}
-{{--    @endforeach--}}
+        </tr>
+    @endforeach
 </table>
 <div style="right:10px;width: 300px;display: inline-block;margin-top:70px">
     <p class="text-center mb-5">Pimpinan</p>

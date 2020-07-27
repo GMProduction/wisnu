@@ -30,7 +30,7 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">Light table</h3>
+                        <h3 class="mb-0">Tabel Advokat</h3>
                     </div>
                     <!-- Light table -->
                     <div class="table-responsive">
@@ -55,19 +55,10 @@
                                     <td>{{$a->tempat_lahir}}, {{$a->tanggal_lahir}}</td>
                                     <td>{{$a->no_telepon}}</td>
                                     <td>{{$a->email}}</td>
-                                    <td class="text-right">
-                                        <div class="dropdown">
-                                            <a class="btn btn-sm btn-icon-only text-light" href="#" role="button"
-                                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="fas fa-ellipsis-v"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                <a class="dropdown-item" href="/admin/advokat/editadvokat/{{$a->id}}">edit</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
-                                        </div>
+                                    <td class="text-center">
+                                        <a class="btn btn-sm" href="/admin/advokat/editadvokat/{{$a->id}}">Detail</a>
                                     </td>
+
                                 </tr>
                             @endforeach
                             </tbody>
