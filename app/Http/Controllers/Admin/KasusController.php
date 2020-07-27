@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Helper\CustomController;
+use App\model\t_advokat;
+use App\model\t_jadwal;
 use App\model\t_kasus;
 
 class KasusController extends CustomController
@@ -27,11 +29,28 @@ class KasusController extends CustomController
                 'no_registrasi' => $this->postField('id'),
                 'status' => $this->postField('status'),
             ];
+            if ($data['status'] == 'tolak'){
+                $data['alasan'] = $this->postField('alasan');
+            }else{
+                $tanggal =  $this->postField('tanggal').' '.$this->postField('jam').':'.$this->postField('menit').':00';
+                $jadwal = [
+                  'no_registrasi' => $this->postField('noRegistrasi'),
+                  'tanggal' => $tanggal,
+                  'id_advokat' => $this->postField('advokat'),
+                  'layanan' => $this->postField('layanan'),
+                ];
+//                dump($jadwal);die();
+                $data['alasan'] = 'diterima';
+                $this->insert(t_jadwal::class, $jadwal);
+            }
             $kasus->status = $data['status'];
+            $kasus->alasan = $data['alasan'];
             $kasus->save();
             $data['success'] = 'success';
+//            return $this->kasusDetail($id);
         }
         $data['kasus'] = $kasus;
+        $data['advokats'] = t_advokat::all();
         return view('admin.kasus.kasusdetail')->with($data);
     }
 

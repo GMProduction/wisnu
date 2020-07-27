@@ -45,13 +45,13 @@
                             </tr>
                             </thead>
                             <tbody class="list">
-
+                            @foreach($jadwals as $j)
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>{{ $loop->index + 1}}</td>
+                                    <td>{{$j->jadwal['no_registrasi']}}</td>
+                                    <td>{{$j->advokat['nama_advokat']}}</td>
+                                    <td>{{$j->layanan}}</td>
+                                    <td>{{$j->tanggal}}</td>
                                     <td class="text-right">
                                         <div class="dropdown">
                                             <a class="btn btn-sm btn-icon-only text-light" href="#" role="button"
@@ -66,6 +66,7 @@
                                         </div>
                                     </td>
                                 </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>

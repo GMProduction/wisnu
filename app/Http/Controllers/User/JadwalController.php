@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Helper\CustomController;
+use App\model\t_jadwal;
 
 class JadwalController extends CustomController
 {
@@ -14,7 +15,15 @@ class JadwalController extends CustomController
 
     public function index()
     {
+        $user = auth()->user()->id;
 //        return $kasus->toArray();
-        return view('user.jadwal.jadwal');
+        $jadwals = t_jadwal::with(['jadwal.jadwal','advokat.advokat'])->whereHas('jadwal',function ($query) use ($user) {
+            return $query->where('id_pemohon', $user);
+        })->get();
+//        dump($jadwals[0]->advokat);
+//        dump($jadwals[0]->jadwal->id_pemohon);
+//        dump($jadwals[0]->advokat->no_registrasi);
+//        dump($jadwals);die();
+        return view('user.jadwal.jadwal')->with(['jadwals' => $jadwals]);
     }
 }

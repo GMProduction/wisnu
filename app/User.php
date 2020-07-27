@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\model\t_advokat;
 use App\model\t_kasus;
 use App\model\t_pemohon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -47,5 +48,10 @@ class User extends Authenticatable
     public function kasus()
     {
         return $this->hasMany(t_kasus::class);
+    }
+
+    public function useradvokat()
+    {
+        return $this->hasOne(t_advokat::class);
     }
 }

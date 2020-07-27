@@ -2,13 +2,14 @@
 
 namespace App\model;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class t_advokat extends Model
 {
     //
 
-    protected  $primaryKey = 'id_advokat';
+    protected $primaryKey = 'id';
 
     protected $fillable = [
         'id_advokat',
@@ -20,6 +21,14 @@ class t_advokat extends Model
         'email',
     ];
 
+    public function advokat()
+    {
+        return $this->hasMany(t_jadwal::class, 'id');
+    }
 
+    public function useradvokat()
+    {
+        return $this->belongsTo(User::class,'user_id');
+    }
 
 }

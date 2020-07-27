@@ -37,25 +37,37 @@
 
 <table class="table table-striped">
     <tr>
-        <th> #</th>
-        <th> ID Lelang</th>
-        <th> Kode Lelang</th>
-        <th> Nama Lelang</th>
-        <th> Link Website</th>
-        <th> Reward</th>
-        <th> Kesulitan</th>
+        <th scope="col" class="sort" data-sort="name">#</th>
+        <th scope="col" class="sort" data-sort="budget">Nama Pemohon</th>
+        <th scope="col" class="sort" data-sort="status">No. Identitas</th>
+        <th scope="col">Alamat</th>
+        <th scope="col">No. Telepon</th>
+        <th scope="col">Email</th>
+        <th scope="col">Jenis Kelamin</th>
+        <th scope="col">TTL</th>
+        <th scope="col">Pekerjaan</th>
+        <th scope="col">Agama</th>
+        <th scope="col">Status</th>
+        <th scope="col">Kewarganegaraan</th>
     </tr>
-    @php $i=1; @endphp
-{{--    @foreach($mitra as $m)--}}
-{{--        <tr>--}}
-{{--            <td> {{$i++}}</td>--}}
-{{--            <td> {{$m->username}}</td>--}}
-{{--            <td> {{$m->email}}</td>--}}
-{{--            <td> {{$m->noHp}}</td>--}}
-{{--            <td> {{$m->alamat}}</td>--}}
-
-{{--        </tr>--}}
-{{--    @endforeach--}}
+    </thead>
+    <tbody class="list">
+    @foreach($pemohons as $v)
+        <tr>
+            <td>{{ $loop->index + 1}}</td>
+            <td>{{ $v->nama_pemohon}}</td>
+            <td>{{ $v->no_identitas}}</td>
+            <td>{{ $v->alamat}}</td>
+            <td>{{ $v->no_telepon}}</td>
+            <td>{{ $v->email}}</td>
+            <td>{{ $v->jenis_kelamin}}</td>
+            <td>{{ $v->tempat_lahir}}, {{ $v->tanggal_lahir}}</td>
+            <td>{{ $v->pekerjaan}}</td>
+            <td>{{ $v->agama}}</td>
+            <td>{{ $v->status}}</td>
+            <td>{{ $v->kewarganegaraan}}</td>
+        </tr>
+    @endforeach
 </table>
 <div style="right:10px;width: 300px;display: inline-block;margin-top:70px">
     <p class="text-center mb-5">Pimpinan</p>

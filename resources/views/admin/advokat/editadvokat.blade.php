@@ -7,12 +7,12 @@
             <div class="header-body">
                 <div class="row align-items-center py-4">
                     <div class="col-lg-6 col-7">
-                        <h6 class="h2 text-white d-inline-block mb-0">Tambah Data Advokat</h6>
+                        <h6 class="h2 text-white d-inline-block mb-0">Edit Data Advokat</h6>
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
                                 <li class="breadcrumb-item"><a href="/admin/advokat">Data Advokat</a></li>
-                                <li class="breadcrumb-item"><a href="#">Tambah Data</a></li>
+                                <li class="breadcrumb-item"><a href="#">Edit Data</a></li>
                             </ol>
                         </nav>
                     </div>
@@ -105,7 +105,7 @@
                             <hr class="my-4"/>
                             <!-- Description -->
                             <div class="col-12 text-right">
-                                <button type="submit" href="#!" class="btn btn-lg btn-primary">Simpan</button>
+                                <button type="submit" href="#!" class="btn btn-lg btn-primary">Edit</button>
                             </div>
                         </form>
                     </div>

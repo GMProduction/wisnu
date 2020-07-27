@@ -24,6 +24,6 @@ class t_kasus extends Model
     }
 
     public function jadwal(){
-        return $this->hasOne(t_jadwal::class,'no_registrasi');
+        return $this->hasMany(t_jadwal::class, 'id');
     }
 }

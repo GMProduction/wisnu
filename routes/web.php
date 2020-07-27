@@ -63,13 +63,6 @@ Route::get(
 );
 
 Route::get(
-    '/user/jadwal',
-    function () {
-        return view('user/jadwal');
-    }
-);
-
-Route::get(
     '/user/konsultasi',
     function () {
         return view('user/konsultasi/konsultasi');
@@ -83,38 +76,21 @@ Route::get(
     }
 );
 
-Route::get(
-    '/admin/pemohon',
-    function () {
-        return view('admin/pemohon/pemohon');
-    }
-);
+Route::get('/admin/pemohon','Admin\PemohonController@index');
 
 Route::get('/admin/kasus', 'Admin\KasusController@index');
 Route::get('/admin/kasus/kasusdetail/{id}', 'Admin\KasusController@kasusDetail');
 Route::post('/admin/kasus/kasusdetail/{id}', 'Admin\KasusController@kasusDetail');
 Route::get('/admin/kasus/kasusdetail/confirmKasus', 'Admin\KasusController@confirmKasus');
 
-Route::get(
-    '/admin/advokat',
-    function () {
-        return view('admin/advokat/advokat');
-    }
-);
+Route::get('/admin/advokat','Admin\AdvokatController@index');
+Route::post('/admin/advokat/store','Admin\AdvokatController@addForm');
+Route::get('/admin/advokat/tambahadvokat',function (){return view('admin/advokat/tambahadvokat');});
+Route::get('/admin/advokat/editadvokat/{id}','Admin\AdvokatController@editAdvokat');
 
-Route::get(
-    '/admin/tambahadvokat',
-    function () {
-        return view('admin/advokat/tambahadvokat');
-    }
-);
+Route::get('/admin/jadwal','Admin\JadwalController@index');
+Route::get('/admin/jadwal/detail/{id}','Admin\JadwalController@detailJadwal');
 
-Route::get(
-    '/admin/jadwal',
-    function () {
-        return view('admin/jadwal/jadwal');
-    }
-);
 
 Route::get(
     '/admin/tambahjadwal',
@@ -122,6 +98,13 @@ Route::get(
         return view('admin/jadwal/tambahjadwal');
     }
 );
+
+//email
+Route::get('/admin/email', function () {
+    return view('admin/send_email');
+});
+Route::post('/admin/sendEmail', 'Email@sendEmail');
+
 
 Route::get('/admin/pemohon/cetak', 'LaporanController@cetakAdminDataPemohon')->name('admindatapemohoncetak');
 Route::get('/admin/kasus/cetak', 'LaporanController@cetakAdminDataKasus')->name('admindatakasuscetak');
@@ -143,3 +126,4 @@ Route::get('/user/jadwal', 'User\JadwalController@index');
 
 Route::get('/logout', 'Auth\AuthController@logout');
 Route::post('/postlogin', 'Auth\AuthController@login');
+
