@@ -103,6 +103,37 @@
         </a>
     </div>
 
+    <div class="card-header border-0">
+        <h6 class="mb-0">Tabel Konsultasi</h6>
+    </div>
+
+    <div class="table-responsive">
+        <table id="tabel" class="table align-items-center table-flush">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col" class="sort" data-sort="name">#</th>
+                <th scope="col" class="sort" data-sort="budget">Proses Konsultasi</th>
+                <th scope="col" class="sort" data-sort="status">Detail Konsultasi</th>
+            </tr>
+            </thead>
+            <tbody class="list">
+            @forelse($kasus->konsultasi as $v)
+                <tr>
+                    <td>{{ $loop->index + 1}}</td>
+                    <td>{{$v->proses_konsultasi}}</td>
+                    <td>{{$v->detail_konsultasi}}</td>
+                </tr>
+            @empty
+                <tr>
+                    <td class="text-center" colspan="4">Belum ada data konsultasi</td>
+                </tr>
+            @endforelse
+            </tbody>
+        </table>
+        <!-- Description -->
+
+    </div>
+
 </div>
 <div style="right:10px;width: 300px;display: inline-block;margin-top:70px">
     <p class="text-center mb-5">Pimpinan</p>

@@ -134,6 +134,7 @@ Route::get('/admin/kasus/cetak', 'LaporanController@cetakAdminDataKasus')->name(
 Route::get('/admin/advokat/cetak', 'LaporanController@cetakAdminDataAdvokat')->name('cetakAdminDataAdvokat');
 Route::get('/admin/jadwal/cetak', 'LaporanController@cetakAdminDataJadwal')->name('cetakAdminDataJadwal');
 Route::get('/admin/jadwal/cetakDetail/{id}', 'LaporanController@cetakAdminDataJadwalDetail')->name('cetakAdminDataJadwalDetail');
+Route::get('/admin/kasus/cetakDetail/{id}', 'LaporanController@cetakAdminDataKasusDetail')->name('cetakAdminDataKasusDetail');
 
 Route::get('/register', 'Auth\AuthController@index');
 Route::post('/post-register', 'Auth\AuthController@register');

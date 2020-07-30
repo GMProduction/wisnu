@@ -20,10 +20,10 @@
 <style>
     footer {
         position: fixed;
-        bottom: 0cm;
-        left: 0cm;
-        right: 0cm;
-        height: 0cm;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 0;
     }
 </style>
 

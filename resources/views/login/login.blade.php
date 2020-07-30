@@ -60,7 +60,10 @@
                 <div class="card bg-secondary border-0 mb-0">
                     <div class="card-body px-lg-5 py-lg-5">
                         <div class="text-center text-muted mb-4">
+                            <img src="{{asset("assets/img/theme/bootstrap.jpg")}}" style="height: 50px"/><a class="text-black-50">Nama Perusahaan</a>
+                            <br>
                             <small>Masukan user dan password</small>
+
                         </div>
                         <form role="form" action="/postlogin" method="post">
                             @csrf

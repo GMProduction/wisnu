@@ -61,7 +61,8 @@
                                     <td>{{ $v->status }}</td>
                                     <td>{{ $v->alasan }}</td>
                                     <td class="text-center">
-                                        <a class="btn btn-sm" href="/admin/kasus/kasusdetail/{{$v->no_registrasi}}">Detail</a>
+                                        <a class="btn btn-sm btn-primary" href="/admin/kasus/kasusdetail/{{$v->no_registrasi}}">Detail</a>
+                                        <a class="btn btn-sm btn-warning" href="/admin/kasus/cetakDetail/{{$v->no_registrasi}}">Cetak</a>
                                     </td>
                                 </tr>
                             @endforeach

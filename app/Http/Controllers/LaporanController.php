@@ -95,4 +95,19 @@ class LaporanController extends Controller
 //        return $this->adminDataJadwalDetail($id);
     }
 
+    public function adminDataKasusDetail($id)
+    {
+//        $jadwals = t_jadwal::where('id',$id)->with(['jadwal.jadwal','advokat.advokat'])->first();
+//        dump($jadwals);die();
+        return view('admin.kasus.cetakDetail')->with(['kasus' => "jadwals"]);
+    }
+
+    public function cetakAdminDataKasusDetail($id)
+    {
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($this->adminDataKasusDetail($id))->setPaper('b4', 'potrait');
+        return $pdf->stream();
+//        return $this->adminDataJadwalDetail($id);
+    }
+
 }
