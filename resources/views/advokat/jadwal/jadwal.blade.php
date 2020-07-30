@@ -11,7 +11,7 @@
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="#">Data Kasus</a></li>
+                                <li class="breadcrumb-item"><a href="#">Data Jadwal</a></li>
                             </ol>
                         </nav>
                     </div>
@@ -38,7 +38,7 @@
                             <tr>
                                 <th scope="col" class="sort" data-sort="name">#</th>
                                 <th scope="col" class="sort" data-sort="status">No. Registrasi</th>
-                                <th scope="col">Nama Advokat</th>
+                                <th scope="col">Nama Pemohon</th>
                                 <th scope="col">Jenis Kasus</th>
                                 <th scope="col">Layanan</th>
                                 <th scope="col">Tangal</th>
@@ -50,11 +50,13 @@
                                 <tr>
                                     <td>{{ $loop->index + 1}}</td>
                                     <td>{{$j->jadwal['no_registrasi']}}</td>
-                                    <td>{{$j->advokat['nama_advokat']}}</td>
+                                    <td>{{$j->jadwal->pemohon->pemohon->nama_pemohon}}</td>
                                     <td>{{$j->jadwal->jenis_kasus}}</td>
                                     <td>{{$j->jadwal->layanan}}</td>
                                     <td>{{$j->tanggal}}</td>
-                                    <td><a class="btn btn-sm">Detail</a></td>
+                                    <td class="text-center">
+                                        <a class="btn btn-sm" href="/advokat/jadwal/detail/{{$j->id}}">Detail</a>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

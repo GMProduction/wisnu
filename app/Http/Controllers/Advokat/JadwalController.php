@@ -17,7 +17,7 @@ class JadwalController extends CustomController
     {
         $user = auth()->user()->id;
 //        return $kasus->toArray();
-        $jadwals = t_jadwal::with(['jadwal','advokat'])->whereHas('advokat',function ($query) use ($user) {
+        $jadwals = t_jadwal::with(['jadwal.pemohon.pemohon','advokat'])->whereHas('advokat',function ($query) use ($user) {
             return $query->where('user_id', $user);
         })->get();
 //        return $jadwals->toArray();
@@ -27,5 +27,11 @@ class JadwalController extends CustomController
 //        dump($jadwals[0]->advokat->no_registrasi);
 //        dump($jadwals);die();
         return view('advokat.jadwal.jadwal')->with(['jadwals' => $jadwals]);
+    }
+
+    public function detailJadwal($id){
+        $jadwals = t_jadwal::with(['jadwal.jadwal','advokat.advokat'])->where('id',$id)->first();
+//        return $jadwals->toArray();
+        return view('advokat.jadwal.detailjadwal')->with(['kasus' => $jadwals]);
     }
 }

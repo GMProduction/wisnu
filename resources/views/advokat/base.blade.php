@@ -20,7 +20,11 @@
     <link rel="stylesheet" href="{{asset('/assets/css/argon.css?v=1.2.0')}}" type="text/css">
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="{{asset('assets/js/swal.min.js')}}"></script>
-
+    @if (auth()->user()->level !== 'advokat')
+        <script>
+            window.location = '/';
+        </script>
+    @endif
 </head>
 
 <body style="background-color: #eeeeee">
