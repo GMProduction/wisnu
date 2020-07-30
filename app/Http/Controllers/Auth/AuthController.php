@@ -65,6 +65,8 @@ class AuthController extends CustomController
             $level = Auth::user()->level;
             if($level == 'admin'){
                 return redirect('/admin');
+            }elseif ($level == 'advokat'){
+                return redirect('/advokat');
             }
             return redirect('/user');
         }

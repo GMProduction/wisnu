@@ -20,6 +20,7 @@ class JadwalController extends CustomController
         $jadwals = t_jadwal::with(['jadwal.jadwal','advokat.advokat'])->whereHas('jadwal',function ($query) use ($user) {
             return $query->where('id_pemohon', $user);
         })->get();
+//        return $jadwals->toArray();
 //        dump($jadwals[0]->advokat);
 //        dump($jadwals[0]->jadwal->id_pemohon);
 //        dump($jadwals[0]->advokat->no_registrasi);

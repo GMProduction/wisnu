@@ -38,7 +38,7 @@
                 <div class="card">
 
                     <div class="card-body">
-                        <form method="POST" onsubmit="return cekEdit()">
+                        <form method="POST" onsubmit="return cekEdit()" enctype="multipart/form-data">
                             @csrf
 {{--                            <input id="id" name="id" value="{{$kasus->id}}" hidden>--}}
                             <h6 class="heading-small text-muted mb-4">Data</h6>
@@ -78,6 +78,17 @@
                                                       class="form-control">{{$kasus->kronologi_kasus}}</textarea>
                                         </div>
                                     </div>
+                                    <div class="col-lg-12 mb-3">
+                                        <img src="{{asset('uploads/bukti')}}/{{$kasus->image}}" height="200">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <a>Foto Barang Bukti (Jika ada)</a>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="image"
+                                                   name="image" lang="en">
+                                            <label class="custom-file-label" for="image">Select file</label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -103,9 +114,10 @@
 @section('script')
 <script>
     $(document).ready(function () {
-
-        $('#jenisKasus').val({{$kasus->jenis_kasus}});
-        $('#layanan').val({{$kasus->layanan}});
+{{--console.log('{{$kasus->jenis_kasus}}');--}}
+{{--console.log('{{$kasus->layanan}}');--}}
+        $('#jenisKasus').val('{{$kasus->jenis_kasus}}');
+        $('#layanan').val('{{$kasus->layanan}}');
         $('#jenisKasus').formSelect();
         $('#layanan').formSelect();
     });

@@ -38,7 +38,7 @@
                 <div class="card">
 
                     <div class="card-body">
-                        <form action="/user/kasus/store" method="POST">
+                        <form action="/user/kasus/store" method="POST" enctype="multipart/form-data">
                             @csrf
                             <h6 class="heading-small text-muted mb-4">Data</h6>
                             <div class="pl-lg-4">
@@ -70,13 +70,13 @@
                                     <div class="col-lg-12">
                                         <div class="form-group">
                                             <label class="keteranganJadwal" for="kronologiKasus">Kronologi Kasus</label>
-                                            <input type="text" id="kronologiKasus" name="kronologiKasus" required
-                                                   class="form-control">
+                                            <textarea type="text" id="kronologiKasus" name="kronologiKasus" required
+                                                      class="form-control"></textarea>
                                         </div>
                                     </div>
 
                                     <div class="col-lg-6">
-                                        <a>Screenshot</a>
+                                        <a>Foto Barang Bukti (Jika ada)</a>
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" id="image"
                                                    name="image" lang="en">

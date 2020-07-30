@@ -39,9 +39,9 @@
                                 <th scope="col" class="sort" data-sort="name">#</th>
                                 <th scope="col" class="sort" data-sort="status">No. Registrasi</th>
                                 <th scope="col">Nama Advokat</th>
+                                <th scope="col">Jenis Kasus</th>
                                 <th scope="col">Layanan</th>
                                 <th scope="col">Tangal</th>
-                                <th scope="col">Aksi</th>
                             </tr>
                             </thead>
                             <tbody class="list">
@@ -50,21 +50,10 @@
                                     <td>{{ $loop->index + 1}}</td>
                                     <td>{{$j->jadwal['no_registrasi']}}</td>
                                     <td>{{$j->advokat['nama_advokat']}}</td>
-                                    <td>{{$j->layanan}}</td>
+                                    <td>{{$j->jadwal->jenis_kasus}}</td>
+                                    <td>{{$j->jadwal->layanan}}</td>
                                     <td>{{$j->tanggal}}</td>
-                                    <td class="text-right">
-                                        <div class="dropdown">
-                                            <a class="btn btn-sm btn-icon-only text-light" href="#" role="button"
-                                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="fas fa-ellipsis-v"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                <a class="dropdown-item" href="">edit</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
-                                        </div>
-                                    </td>
+
                                 </tr>
                             @endforeach
                             </tbody>

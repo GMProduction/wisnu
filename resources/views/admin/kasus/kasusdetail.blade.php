@@ -88,6 +88,9 @@
                                             <textarea readonly id="kronologi" name="kronologi" class="form-control">{{$kasus->kronologi_kasus}}</textarea>
                                         </div>
                                     </div>
+                                    <div class="col-lg-12 mb-3">
+                                        <a href="{{asset('uploads/bukti')}}/{{$kasus->image}}" target="_blank"><img src="{{asset('uploads/bukti')}}/{{$kasus->image}}" height="200"></a>
+                                    </div>
 
                                     <hr class="my-4"/>
                                     <!-- Description -->
@@ -214,13 +217,13 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
-                                <div class="form-group">
-                                    <label class="form-control-label" for="layanan">Layanan</label>
-                                    <input type="text" id="layanan" name="layanan" value="" required
-                                           class="form-control">
-                                </div>
-                            </div>
+{{--                            <div class="col-lg-4">--}}
+{{--                                <div class="form-group">--}}
+{{--                                    <label class="form-control-label" for="layanan">Layanan</label>--}}
+{{--                                    <input type="text" id="layanan" name="layanan" value="" required--}}
+{{--                                           class="form-control">--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -239,17 +242,7 @@
 @section('script')
 
     <script>
-        $(document).ready(function () {
-            @if(\Illuminate\Support\Facades\Session::has('success'))
-            swal({
-                title: 'Success',
-                text: 'Kasus telah {{$status}}',
-                icon: 'success',
-                confirmButtonText: 'Ok'
-            });
-            @endif
 
-        });
 
         function modalTerima() {
             $('#modalTerima #advokat').val('');

@@ -52,6 +52,11 @@ class KasusController extends CustomController
             $kasus->layanan = $data['layanan'];
             $kasus->kronologi_kasus = $data['kronologi_kasus'];
             $kasus->jenis_kasus = $data['jenis_kasus'];
+            if ($this->request->hasFile('image')) {
+                $image = $this->generateImageName('image');
+                $kasus->image = $image;
+                $this->uploadImage('image', $image, 'bukti');
+            }
             $kasus->save();
 //            $this->update(t_kasus::class,$data);
             return redirect()->back()->with(['success' => 'success']);
@@ -68,12 +73,13 @@ class KasusController extends CustomController
             'jenis_kasus' => $this->postField('jenisKasus'),
             'id_pemohon' => auth()->id(),
         ];
-        if ($this->request->hasFile('bukti')) {
-            $image = $this->generateImageName('bukti');
+        if ($this->request->hasFile('image')) {
+            $image = $this->generateImageName('image');
             $data   = Arr::add($data, 'image', $image);
             $this->uploadImage('image', $image, 'bukti');
         }
 
+//        dump($data);die();
         $this->insert(t_kasus::class, $data);
         return redirect()->back()->with(['success' => 'success']);
     }

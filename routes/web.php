@@ -69,6 +69,17 @@ Route::get(
     }
 );
 
+
+Route::get('/advokat',function () {
+        return view('advokat/dashboard');
+    }
+);
+Route::get('/advokat/profil', 'Advokat\ProfilController@index');
+Route::post('/advokat/profil', 'Advokat\ProfilController@index');
+Route::get('/advokat/kasus', 'Advokat\KasusController@index');
+Route::get('/advokat/jadwal', 'Advokat\JadwalController@index');
+
+
 Route::get(
     '/admin',
     function () {
