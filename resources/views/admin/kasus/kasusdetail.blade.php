@@ -1,6 +1,15 @@
 @extends('admin.base')
 @section('content')
-
+    @if(\Illuminate\Support\Facades\Session::has('success'))
+        <script>
+            Swal.fire({
+                title: 'Success',
+                text: 'Berhasil Merubah Data',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+            })
+        </script>
+    @endif
     <style>
         .form-control[readonly] {
             background-color: white;
@@ -170,7 +179,7 @@
                                 <div class="form-group">
                                     <label class="form-control-label" for="advokat">Advokat</label>
                                     <select class="form-control" id="advokat" name="advokat" required>
-                                        <option value="">Pilih Nama Lelang</option>
+                                        <option value="">Pilih Nama Advokat</option>
                                         @foreach($advokats as $ad)
                                             <option value="{{ $ad->id }}">{{ $ad->nama_advokat }}</option>
                                         @endforeach

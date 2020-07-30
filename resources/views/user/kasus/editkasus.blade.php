@@ -1,6 +1,15 @@
 @extends('user.base')
 @section('content')
-
+    @if(\Illuminate\Support\Facades\Session::has('success'))
+        <script>
+            Swal.fire({
+                title: 'Success',
+                text: 'Berhasil Merubah Data',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+            })
+        </script>
+    @endif
     <!-- Header -->
     <div class="header bg-primary pb-6">
         <div class="container-fluid">
@@ -42,15 +51,23 @@
                                     <div class="form-group col-lg-12">
                                         <label for="jenisKasus">Jenis kasus</label>
                                         <select class="form-control" id="jenisKasus" name="jenisKasus">
-                                            <option value="perdana">Perdana</option>
-                                            <option value="perdata">Perdata</option>
+                                            <option value="Pidana">Pidana</option>
+                                            <option value="Perdata">Perdata</option>
+                                            <option value="Hak Asuh Anak">Hak Asuh Anak</option>
+                                            <option value="Harta Gono Gini">Harta Gono Gini</option>
+                                            <option value="Adopsi Anak">Adopsi Anak</option>
+                                            <option value="Hukum Waris">Hukum Waris</option>
+                                            <option value="Wasiat">Wasiat</option>
                                         </select>
                                     </div>
 
                                     <div class="form-group col-lg-12">
                                         <label for="layanan">Layanan</label>
                                         <select class="form-control" id="layanan" name="layanan">
-                                            <option value="konsultasi">Konsultasi</option>
+                                            <option value="Jasa Konsultasi">Jasa Konsultasi</option>
+                                            <option value="Pendampingan">Pendampingan</option>
+                                            <option value="Penyelesaian Sengketa">Penyelesaian Sengketa</option>
+                                            <option value="Penyelesaian Perkara">Penyelesaian Perkara</option>
                                         </select>
                                     </div>
 

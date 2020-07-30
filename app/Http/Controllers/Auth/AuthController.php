@@ -68,7 +68,8 @@ class AuthController extends CustomController
             }
             return redirect('/user');
         }
-        return redirect()->back()->with(['fail' => 'Periksa Username & Password']);
+        return redirect()->back()->withInput()->with(['failed' => 'Periksa Kembali Username dan Password Anda']);
+
     }
 
     public function logout()

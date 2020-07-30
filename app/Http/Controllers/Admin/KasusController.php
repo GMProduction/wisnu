@@ -29,7 +29,7 @@ class KasusController extends CustomController
             Mail::send('email', ['nama' => $nama, 'pesan' => $pesan], function ($message) use ($email)
             {
                 $message->subject('Informasi Kasus');
-                $message->from('portgaz77@gmail.com', 'Kiddy');
+                $message->from('portgaz77@gmail.com', 'Admin');
                 $message->to($email);
             });
             return back()->with('alert-success','Berhasil Kirim Email');
