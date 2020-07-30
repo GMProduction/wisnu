@@ -169,6 +169,7 @@
 <!-- Argon Scripts -->
 <!-- Core -->
 <script src="{{asset('assets/vendor/jquery/dist/jquery.min.js')}}"></script>
+<script src="{{asset('assets/js/swal.min.js')}}"></script>
 <script src="{{asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('assets/DataTables/datatables.js')}}"></script>
 
@@ -181,7 +182,7 @@
 <!-- Argon JS -->
 <script src="{{asset('assets/js/argon.js?v=1.2.0')}}"></script>
 <script src="{{asset('assets/js/componen.js')}}"></script>
-<script src="{{asset('assets/js/swal.min.js')}}"></script>
+
 
 <script>
     feather.replace()
