@@ -37,25 +37,29 @@
 
 <table class="table table-striped">
     <tr>
-        <th> #</th>
-        <th> ID Lelang</th>
-        <th> Kode Lelang</th>
-        <th> Nama Lelang</th>
-        <th> Link Website</th>
-        <th> Reward</th>
-        <th> Kesulitan</th>
+        <th scope="col" class="sort" data-sort="name">#</th>
+        <th scope="col" class="sort" data-sort="budget">Nama Pemohon</th>
+        <th scope="col" class="sort" data-sort="status">No. Registrasi</th>
+        <th scope="col">Layanan</th>
+        <th scope="col">Jenis Kasus</th>
+        <th scope="col">Status</th>
+        <th scope="col">Alasan</th>
     </tr>
-    @php $i=1; @endphp
-{{--    @foreach($mitra as $m)--}}
-{{--        <tr>--}}
-{{--            <td> {{$i++}}</td>--}}
-{{--            <td> {{$m->username}}</td>--}}
-{{--            <td> {{$m->email}}</td>--}}
-{{--            <td> {{$m->noHp}}</td>--}}
-{{--            <td> {{$m->alamat}}</td>--}}
+    </thead>
+    <tbody class="list">
+    @foreach($kasus as $v)
 
-{{--        </tr>--}}
-{{--    @endforeach--}}
+        <tr>
+            <td>{{ $loop->index + 1}}</td>
+            <td>{{ $v->pemohon->pemohon->nama_pemohon }}</td>
+            <td>{{ $v->no_registrasi }}</td>
+            <td>{{ $v->layanan }}</td>
+            <td>{{ $v->jenis_kasus }}</td>
+            <td>{{ $v->status }}</td>
+            <td>{{ $v->alasan }}</td>
+
+        </tr>
+    @endforeach
 </table>
 <div style="right:10px;width: 300px;display: inline-block;margin-top:70px">
     <p class="text-center mb-5">Pimpinan</p>
@@ -65,7 +69,7 @@
 <div style="left:10px;width: 300px; margin-left : 100px;display: inline-block">
     <p class="text-center mb-5">Admin</p>
     <p class="text-center">(
-{{--        {{auth()->user()->username}}--}}
+        {{auth()->user()->username}}
         )</p>
 </div>
 
@@ -73,7 +77,7 @@
 <footer class="footer">
     @php $date = new DateTime("now", new DateTimeZone('Asia/Bangkok') ); @endphp
     <p class="text-right small mb-0 mt-0 pt-0 pb-0"> di cetak oleh :
-{{--        {{auth()->user()->username}}--}}
+        {{auth()->user()->username}}
     </p>
     <p class="text-right small mb-0 mt-0 pt-0 pb-0"> tgl: {{ $date->format('d F Y, H:i:s') }} </p>
 </footer>

@@ -1,6 +1,15 @@
 @extends('user.base')
 @section('content')
-
+    @if(\Illuminate\Support\Facades\Session::has('success'))
+        <script>
+            Swal.fire({
+                title: 'Success',
+                text: 'Berhasil Merubah Data',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+            })
+        </script>
+    @endif
     <div class="main-content" id="panel">
 
         <!-- Header -->
@@ -71,7 +80,7 @@
 
                                 <p class="mb-1">Kewarganegaraan</p>
                                 <h6 class="h3 mb-4">
-                                    {{ $user->kewaraganegaraan }}
+                                    {{ $user->kewarganegaraan }}
                                 </h6>
 
                                 <p class="mb-1">Status</p>

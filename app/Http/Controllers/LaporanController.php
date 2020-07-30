@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\model\t_advokat;
+use App\model\t_jadwal;
+use App\model\t_kasus;
 use App\model\t_pemohon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -19,24 +22,16 @@ class LaporanController extends Controller
     {
 
         $pdf = \App::make('dompdf.wrapper');
-        $pdf->loadHTML($this->adminDataPemohon($request))->setPaper('f4', 'landscape');
+        $pdf->loadHTML($this->adminDataPemohon($request))->setPaper('b4', 'landscape');
         return $pdf->stream();
 //        return $this->adminDataPemohon($request);
     }
 
     public function adminDataKasus(Request $request)
     {
-//        $caridata = $request->caridata;
-//        $status = $request->status;
-//        $mitra = mitraModel::where('status', 'LIKE', '%' . $status . '%')
-//            ->where(function ($q) use ($caridata) {
-//                $q->where('username', 'LIKE', '%' . $caridata . '%')
-//                    ->orwhere('email', 'LIKE', '%' . $caridata . '%')
-//                    ->orwhere('noHp', 'LIKE', '%' . $caridata . '%')
-//                    ->orwhere('alamat', 'LIKE', '%' . $caridata . '%');
-//            })
-//            ->get();
-        return view('admin.pemohon.cetak')->with(['mitra' => "datanya"]);
+        $kasus = t_kasus::with('pemohon.pemohon')->get();
+
+        return view('admin.kasus.cetak')->with(['kasus' => $kasus]);
     }
 
     public function cetakAdminDataKasus(Request $request)
@@ -50,25 +45,16 @@ class LaporanController extends Controller
 
     public function adminDataAdvokat(Request $request)
     {
-//        $caridata = $request->caridata;
-//        $status = $request->status;
-//        $mitra = mitraModel::where('status', 'LIKE', '%' . $status . '%')
-//            ->where(function ($q) use ($caridata) {
-//                $q->where('username', 'LIKE', '%' . $caridata . '%')
-//                    ->orwhere('email', 'LIKE', '%' . $caridata . '%')
-//                    ->orwhere('noHp', 'LIKE', '%' . $caridata . '%')
-//                    ->orwhere('alamat', 'LIKE', '%' . $caridata . '%');
-//            })
-//            ->get();
-        return view('admin.pemohon.cetak')->with(['mitra' => "datanya"]);
+        $advokat = t_advokat::all();
+        return view('admin.advokat.cetak')->with(['advokats' => $advokat]);
     }
 
     public function cetakAdminDataAdvokat(Request $request)
     {
-
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($this->adminDataAdvokat($request));
         return $pdf->stream();
+//        return $this->adminDataAdvokat($request);
     }
 
     public function adminDatajadwal(Request $request)
@@ -94,27 +80,19 @@ class LaporanController extends Controller
         return $pdf->stream();
     }
 
-    public function adminDataJadwalDetail(Request $request)
+    public function adminDataJadwalDetail($id)
     {
-//        $caridata = $request->caridata;
-//        $status = $request->status;
-//        $mitra = mitraModel::where('status', 'LIKE', '%' . $status . '%')
-//            ->where(function ($q) use ($caridata) {
-//                $q->where('username', 'LIKE', '%' . $caridata . '%')
-//                    ->orwhere('email', 'LIKE', '%' . $caridata . '%')
-//                    ->orwhere('noHp', 'LIKE', '%' . $caridata . '%')
-//                    ->orwhere('alamat', 'LIKE', '%' . $caridata . '%');
-//            })
-//            ->get();
-        return view('admin.jadwal.cetakDetail')->with(['mitra' => "datanya"]);
+        $jadwals = t_jadwal::where('id',$id)->with(['jadwal.jadwal','advokat.advokat'])->first();
+//        dump($jadwals);die();
+        return view('admin.jadwal.cetakDetail')->with(['kasus' => $jadwals]);
     }
 
-    public function cetakAdminDataJadwalDetail(Request $request)
+    public function cetakAdminDataJadwalDetail($id)
     {
-
         $pdf = \App::make('dompdf.wrapper');
-        $pdf->loadHTML($this->adminDataJadwalDetail($request))->setPaper('b4', 'potrait');
+        $pdf->loadHTML($this->adminDataJadwalDetail($id))->setPaper('b4', 'potrait');
         return $pdf->stream();
+//        return $this->adminDataJadwalDetail($id);
     }
 
 }

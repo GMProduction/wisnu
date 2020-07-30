@@ -65,10 +65,13 @@ class AuthController extends CustomController
             $level = Auth::user()->level;
             if($level == 'admin'){
                 return redirect('/admin');
+            }elseif ($level == 'advokat'){
+                return redirect('/advokat');
             }
             return redirect('/user');
         }
-        return redirect()->back()->with(['fail' => 'Periksa Username & Password']);
+        return redirect()->back()->withInput()->with(['failed' => 'Periksa Kembali Username dan Password Anda']);
+
     }
 
     public function logout()

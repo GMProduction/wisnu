@@ -16,12 +16,26 @@
     <link rel="stylesheet" href="{{ asset('/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}.." type="text/css">
     <!-- Argon CSS -->
     <link rel="stylesheet" href="{{ asset('/assets/css/argon.css?v=1.2.0') }}" type="text/css">
+    <script src="{{asset('assets/js/swal.min.js')}}"></script>
+
+
 </head>
 
 <body class="bg-default">
+@if(\Illuminate\Support\Facades\Session::has('failed'))
+    <script>
+        Swal.fire({
+            title: 'Warning',
+            text: 'Periksa Kembali Username dan Password Anda',
+            icon: 'warning',
+            confirmButtonText: 'Ok'
+        })
+    </script>
+@endif
 <!-- Navbar -->
 <!-- Main content -->
 <div class="main-content">
+
     <!-- Header -->
     <div class="header bg-gradient-primary py-8 py-lg-8 pt-lg-8">
         <div class="container">

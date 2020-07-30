@@ -1,6 +1,15 @@
 @extends('admin.base')
 @section('content')
-
+    @if(\Illuminate\Support\Facades\Session::has('success'))
+        <script>
+            Swal.fire({
+                title: 'Success',
+                text: 'Berhasil Merubah Data',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+            })
+        </script>
+    @endif
     <style>
         .form-control[readonly] {
             background-color: white;
@@ -79,6 +88,9 @@
                                             <textarea readonly id="kronologi" name="kronologi" class="form-control">{{$kasus->kronologi_kasus}}</textarea>
                                         </div>
                                     </div>
+                                    <div class="col-lg-12 mb-3">
+                                        <a href="{{asset('uploads/bukti')}}/{{$kasus->image}}" target="_blank"><img src="{{asset('uploads/bukti')}}/{{$kasus->image}}" height="200"></a>
+                                    </div>
 
                                     <hr class="my-4"/>
                                     <!-- Description -->
@@ -135,6 +147,16 @@
     <div class="modal fade" id="modalTerima" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
+                @if(\Session::has('alert-failed'))
+                    <div class="alert alert-failed">
+                        <div>{{Session::get('alert-failed')}}</div>
+                    </div>
+                @endif
+                @if(\Session::has('alert-success'))
+                    <div class="alert alert-success">
+                        <div>{{Session::get('alert-success')}}</div>
+                    </div>
+                @endif
                 <form method="post">
                     @csrf
                     <input id="id" name="id" value="{{$kasus->no_registrasi}}" hidden>
@@ -160,7 +182,7 @@
                                 <div class="form-group">
                                     <label class="form-control-label" for="advokat">Advokat</label>
                                     <select class="form-control" id="advokat" name="advokat" required>
-                                        <option value="">Pilih Nama Lelang</option>
+                                        <option value="">Pilih Nama Advokat</option>
                                         @foreach($advokats as $ad)
                                             <option value="{{ $ad->id }}">{{ $ad->nama_advokat }}</option>
                                         @endforeach
@@ -174,7 +196,7 @@
                                            class="form-control">
                                 </div>
                             </div>
-                            <div class="col-lg-1">
+                            <div class="col-lg-2">
                                 <div class="form-group">
                                     <label class="form-control-label" for="jam">Jam</label>
                                     <select class="form-control" name="jam" id="jam">
@@ -185,7 +207,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-lg-1">
+                            <div class="col-lg-2">
                                 <div class="form-group">
                                     <label class="form-control-label" for="jam">Menit</label>
                                     <select class="form-control" id="menit" name="menit">
@@ -195,13 +217,13 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label class="form-control-label" for="layanan">Layanan</label>
-                                    <input type="text" id="layanan" name="layanan" value="" required
-                                           class="form-control">
-                                </div>
-                            </div>
+{{--                            <div class="col-lg-4">--}}
+{{--                                <div class="form-group">--}}
+{{--                                    <label class="form-control-label" for="layanan">Layanan</label>--}}
+{{--                                    <input type="text" id="layanan" name="layanan" value="" required--}}
+{{--                                           class="form-control">--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -209,6 +231,7 @@
                         <button type="submit" class="btn btn-primary">Save changes</button>
                     </div>
                 </form>
+
             </div>
         </div>
     </div>
@@ -219,17 +242,7 @@
 @section('script')
 
     <script>
-        $(document).ready(function () {
-            @if(\Illuminate\Support\Facades\Session::has('success'))
-            swal({
-                title: 'Success',
-                text: 'Kasus telah {{$status}}',
-                icon: 'success',
-                confirmButtonText: 'Ok'
-            });
-            @endif
 
-        });
 
         function modalTerima() {
             $('#modalTerima #advokat').val('');

@@ -9,6 +9,7 @@ class t_advokat extends Model
 {
     //
 
+    protected $table = 't_advokats';
     protected $primaryKey = 'id';
 
     protected $fillable = [
@@ -29,6 +30,10 @@ class t_advokat extends Model
     public function useradvokat()
     {
         return $this->belongsTo(User::class,'user_id');
+    }
+
+    public function konsultasi(){
+        return $this->hasMany(t_konsultasi::class, 'id');
     }
 
 }

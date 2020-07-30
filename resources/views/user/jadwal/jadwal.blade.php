@@ -16,7 +16,7 @@
                         </nav>
                     </div>
                     <div class="col-lg-6 col-5 text-right">
-                        <a href="/user/tambahkasus" class="btn btn-sm btn-neutral">Tambah Data</a>
+{{--                        <a href="/user/tambahkasus" class="btn btn-sm btn-neutral">Tambah Data</a>--}}
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">Light table</h3>
+                        <h3 class="mb-0">Tabel Jadwal</h3>
                     </div>
                     <!-- Light table -->
                     <div class="table-responsive">
@@ -39,9 +39,9 @@
                                 <th scope="col" class="sort" data-sort="name">#</th>
                                 <th scope="col" class="sort" data-sort="status">No. Registrasi</th>
                                 <th scope="col">Nama Advokat</th>
+                                <th scope="col">Jenis Kasus</th>
                                 <th scope="col">Layanan</th>
                                 <th scope="col">Tangal</th>
-                                <th scope="col">Aksi</th>
                             </tr>
                             </thead>
                             <tbody class="list">
@@ -50,21 +50,10 @@
                                     <td>{{ $loop->index + 1}}</td>
                                     <td>{{$j->jadwal['no_registrasi']}}</td>
                                     <td>{{$j->advokat['nama_advokat']}}</td>
-                                    <td>{{$j->layanan}}</td>
+                                    <td>{{$j->jadwal->jenis_kasus}}</td>
+                                    <td>{{$j->jadwal->layanan}}</td>
                                     <td>{{$j->tanggal}}</td>
-                                    <td class="text-right">
-                                        <div class="dropdown">
-                                            <a class="btn btn-sm btn-icon-only text-light" href="#" role="button"
-                                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="fas fa-ellipsis-v"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                <a class="dropdown-item" href="">edit</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
-                                        </div>
-                                    </td>
+
                                 </tr>
                             @endforeach
                             </tbody>

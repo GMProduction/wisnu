@@ -15,11 +15,11 @@ class EditIdJadwal extends Migration
     {
         Schema::table('t_jadwals', function (Blueprint $table) {
             //
-//            $table->dropColumn('id_jadwal');
+            $table->dropColumn('id_jadwal');
         });
         Schema::table('t_jadwals', function (Blueprint $table) {
             //
-//            $table->id();
+            $table->id();
         });
     }
 

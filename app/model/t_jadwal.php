@@ -26,4 +26,8 @@ class t_jadwal extends Model
         return $this->belongsTo(t_advokat::class,'id_advokat');
     }
 
+    public function konsultasi(){
+        return $this->hasMany(t_konsultasi::class,'id_jadwal');
+    }
+
 }
