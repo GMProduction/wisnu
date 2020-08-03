@@ -9,7 +9,7 @@
     <title>USER</title>
     <!-- Favicon -->
 {{--    <link rel="icon" href="../assets/img/brand/favicon.png" type="image/png">--}}
-    <!-- Fonts -->
+<!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
     <!-- Icons -->
     <link rel="stylesheet" href="{{asset('assets/vendor/nucleo/css/nucleo.css')}}" type="text/css">
@@ -19,6 +19,12 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/DataTables/datatables.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('/assets/css/argon.css?v=1.2.0')}}" type="text/css">
     <script src="https://unpkg.com/feather-icons"></script>
+    <script src="{{asset('assets/js/swal.min.js')}}"></script>
+    @if (auth()->user()->level !== 'pemohon')
+        <script>
+            window.location = '/';
+        </script>
+    @endif
 </head>
 
 <body style="background-color: #eeeeee">
@@ -27,7 +33,7 @@
     <div class="scrollbar-inner">
         <!-- Brand -->
         <div class="sidenav-header" style="margin-top: 20px; margin-left: 24px; height: 40px; text-align: start">
-{{--            <img src="../assets/img/brand/blue.png" class="navbar-brand-img" alt="...">--}}
+            {{--            <img src="../assets/img/brand/blue.png" class="navbar-brand-img" alt="...">--}}
             <a> WISNU</a>
         </div>
         <div class="navbar-inner">
@@ -108,8 +114,8 @@
                                 <div class="row align-items-center">
                                     <div class="col-auto">
                                         <!-- Avatar -->
-{{--                                        <img alt="Image placeholder" src="../assets/img/theme/team-1.jpg"--}}
-{{--                                             class="avatar rounded-circle">--}}
+                                        <img alt="Image placeholder" src="{{asset('assets/img/theme/team-1.jpg')}}"
+                                             class="avatar rounded-circle">
                                     </div>
                                     <div class="col ml--2">
                                         <div class="d-flex justify-content-between align-items-center">
@@ -128,9 +134,9 @@
                         <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
                            aria-expanded="false">
                             <div class="media align-items-center">
-{{--                  <span class="avatar avatar-sm rounded-circle">--}}
-{{--                    <img alt="Image placeholder" src="../assets/img/theme/team-4.jpg">--}}
-{{--                  </span>--}}
+                   <span class="avatar avatar-sm rounded-circle">
+                    <img alt="Image placeholder" src="{{asset('assets/img/theme/team-4.png')}}">
+                  </span>
                                 <div class="media-body  ml-2  d-none d-lg-block">
                                     <span class="mb-0 text-sm  font-weight-bold">Hi, {{ auth()->user()->username }}</span>
                                 </div>
@@ -182,7 +188,6 @@
 <script src="{{asset('assets/js/argon.js?v=1.2.0')}}"></script>
 <script src="{{asset('assets/js/componen.js')}}"></script>
 <script src="{{asset('assets/js/sweetalert.min.js')}}"></script>
-<script src="{{asset('assets/js/swal.min.js')}}"></script>
 
 <script>
     feather.replace()

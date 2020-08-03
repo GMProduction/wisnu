@@ -29,7 +29,7 @@ class KasusController extends CustomController
             Mail::send('email', ['nama' => $nama, 'pesan' => $pesan], function ($message) use ($email)
             {
                 $message->subject('Informasi Kasus');
-                $message->from('portgaz77@gmail.com', 'Kiddy');
+                $message->from('portgaz77@gmail.com', 'Admin');
                 $message->to($email);
             });
             return back()->with('alert-success','Berhasil Kirim Email');
@@ -54,7 +54,7 @@ class KasusController extends CustomController
                   'no_registrasi' => $this->postField('noRegistrasi'),
                   'tanggal' => $tanggal,
                   'id_advokat' => $this->postField('advokat'),
-                  'layanan' => $this->postField('layanan'),
+//                  'layanan' => $this->postField('layanan'),
                 ];
 //                dump($jadwal);die();
                 $data['alasan'] = 'diterima';
@@ -70,6 +70,8 @@ class KasusController extends CustomController
             $this->sendEmail($email,$name,$pesan );
             $data['success'] = 'success';
 //            return $this->kasusDetail($id);
+            return redirect()->back()->with(['success' => 'success']);
+
         }
         $data['kasus'] = $kasus;
         $data['advokats'] = t_advokat::all();

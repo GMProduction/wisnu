@@ -64,10 +64,25 @@ Route::get(
 
 Route::get(
     '/user/konsultasi',
+    'User\KonsultasiController@index'
+);
+Route::get('/user/konsultasi/detail/{id}', 'User\KonsultasiController@detail');
+Route::post('/user/konsultasi/detail/{id}', 'User\KonsultasiController@detail');
+
+Route::get(
+    '/advokat',
     function () {
-        return view('user/konsultasi/konsultasi');
+        return view('advokat/dashboard');
     }
 );
+Route::get('/advokat/profil', 'Advokat\ProfilController@index');
+Route::post('/advokat/profil', 'Advokat\ProfilController@index');
+Route::get('/advokat/kasus', 'Advokat\KasusController@index');
+Route::get('/advokat/jadwal', 'Advokat\JadwalController@index');
+Route::get('/advokat/jadwal/detail/{id}', 'Advokat\JadwalController@detailJadwal');
+Route::get('/advokat/konsultasi', 'Advokat\KonsultasiController@index');
+Route::get('/advokat/konsultasi/detail/{id}', 'Advokat\KonsultasiController@detail');
+Route::post('/advokat/konsultasi/detail/{id}', 'Advokat\KonsultasiController@detail');
 
 Route::get(
     '/admin',
@@ -76,23 +91,27 @@ Route::get(
     }
 );
 
-Route::get('/admin/pemohon','Admin\PemohonController@index');
+Route::get('/admin/pemohon', 'Admin\PemohonController@index');
 
 Route::get('/admin/kasus', 'Admin\KasusController@index');
 Route::get('/admin/kasus/kasusdetail/{id}', 'Admin\KasusController@kasusDetail');
 Route::post('/admin/kasus/kasusdetail/{id}', 'Admin\KasusController@kasusDetail');
 Route::get('/admin/kasus/kasusdetail/confirmKasus', 'Admin\KasusController@confirmKasus');
 
-Route::get('/admin/advokat','Admin\AdvokatController@index');
-Route::post('/admin/advokat/store','Admin\AdvokatController@addForm');
-Route::get('/admin/advokat/tambahadvokat',function (){return view('admin/advokat/tambahadvokat');});
-Route::get('/admin/advokat/editadvokat/{id}','Admin\AdvokatController@editAdvokat');
-Route::post('/admin/advokat/editadvokat/{id}','Admin\AdvokatController@editAdvokat');
-Route::get('/admin/advokat/delete/{id}','Admin\AdvokatController@delete');
+Route::get('/admin/advokat', 'Admin\AdvokatController@index');
+Route::post('/admin/advokat/store', 'Admin\AdvokatController@addForm');
+Route::get(
+    '/admin/advokat/tambahadvokat',
+    function () {
+        return view('admin/advokat/tambahadvokat');
+    }
+);
+Route::get('/admin/advokat/editadvokat/{id}', 'Admin\AdvokatController@editAdvokat');
+Route::post('/admin/advokat/editadvokat/{id}', 'Admin\AdvokatController@editAdvokat');
+Route::get('/admin/advokat/delete/{id}', 'Admin\AdvokatController@delete');
 
-Route::get('/admin/jadwal','Admin\JadwalController@index');
-Route::get('/admin/jadwal/detail/{id}','Admin\JadwalController@detailJadwal');
-
+Route::get('/admin/jadwal', 'Admin\JadwalController@index');
+Route::get('/admin/jadwal/detail/{id}', 'Admin\JadwalController@detailJadwal');
 
 Route::get(
     '/admin/tambahjadwal',
@@ -102,11 +121,13 @@ Route::get(
 );
 
 //email
-Route::get('/admin/email', function () {
-    return view('admin/send_email');
-});
+Route::get(
+    '/admin/email',
+    function () {
+        return view('admin/send_email');
+    }
+);
 Route::post('/admin/sendEmail', 'Email@sendEmail');
-
 
 Route::get('/admin/pemohon/cetak', 'LaporanController@cetakAdminDataPemohon')->name('admindatapemohoncetak');
 Route::get('/admin/kasus/cetak', 'LaporanController@cetakAdminDataKasus')->name('admindatakasuscetak');

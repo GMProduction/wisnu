@@ -41,6 +41,7 @@
                                 <th scope="col" class="sort" data-sort="status">No. Registrasi</th>
                                 <th scope="col">Nama Advokat</th>
                                 <th scope="col">Nama Pemohon</th>
+                                <th scope="col">Jenis Kasus</th>
                                 <th scope="col">Layanan</th>
                                 <th scope="col">Tangal</th>
                                 <th scope="col">Aksi</th>
@@ -53,7 +54,8 @@
                                     <td>{{$j->jadwal['no_registrasi']}}</td>
                                     <td>{{$j->advokat['nama_advokat']}}</td>
                                     <td>{{$j->jadwal->pemohon->pemohon->nama_pemohon }}</td>
-                                    <td>{{$j->layanan}}</td>
+                                    <td>{{$j->jadwal->jenis_kasus}}</td>
+                                    <td>{{$j->jadwal->layanan}}</td>
                                     <td>{{$j->tanggal}}</td>
                                     <td class="text-center">
                                         <a class="btn btn-sm" href="/admin/jadwal/detail/{{$j->id}}">Detail</a>

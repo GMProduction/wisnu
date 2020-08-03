@@ -1,6 +1,15 @@
 @extends('user.base')
 @section('content')
-
+    @if(\Illuminate\Support\Facades\Session::has('success'))
+        <script>
+            Swal.fire({
+                title: 'Success',
+                text: 'Berhasil Menambah Data',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+            })
+        </script>
+    @endif
     <!-- Header -->
     <div class="header bg-primary pb-6">
         <div class="container-fluid">
@@ -29,7 +38,7 @@
                 <div class="card">
 
                     <div class="card-body">
-                        <form action="/user/kasus/store" method="POST">
+                        <form action="/user/kasus/store" method="POST" enctype="multipart/form-data">
                             @csrf
                             <h6 class="heading-small text-muted mb-4">Data</h6>
                             <div class="pl-lg-4">
@@ -38,23 +47,40 @@
                                     <div class="form-group col-lg-12">
                                         <label for="jenisKasus">Jenis kasus</label>
                                         <select class="form-control" id="jenisKasus" name="jenisKasus">
-                                            <option value="perdana">Perdana</option>
-                                            <option value="perdata">Perdata</option>
+                                            <option value="Pidana">Pidana</option>
+                                            <option value="Perdata">Perdata</option>
+                                            <option value="Hak Asuh Anak">Hak Asuh Anak</option>
+                                            <option value="Harta Gono Gini">Harta Gono Gini</option>
+                                            <option value="Adopsi Anak">Adopsi Anak</option>
+                                            <option value="Hukum Waris">Hukum Waris</option>
+                                            <option value="Wasiat">Wasiat</option>
                                         </select>
                                     </div>
 
                                     <div class="form-group col-lg-12">
                                         <label for="layanan">Layanan</label>
                                         <select class="form-control" id="layanan" name="layanan">
-                                            <option value="konsultasi">Konsultasi</option>
+                                            <option value="Jasa Konsultasi">Jasa Konsultasi</option>
+                                            <option value="Pendampingan">Pendampingan</option>
+                                            <option value="Penyelesaian Sengketa">Penyelesaian Sengketa</option>
+                                            <option value="Penyelesaian Perkara">Penyelesaian Perkara</option>
                                         </select>
                                     </div>
 
                                     <div class="col-lg-12">
                                         <div class="form-group">
                                             <label class="keteranganJadwal" for="kronologiKasus">Kronologi Kasus</label>
-                                            <input type="text" id="kronologiKasus" name="kronologiKasus"
-                                                   class="form-control">
+                                            <textarea type="text" id="kronologiKasus" name="kronologiKasus" required
+                                                      class="form-control"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <a>Foto Barang Bukti (Jika ada)</a>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="image"
+                                                   name="image" lang="en">
+                                            <label class="custom-file-label" for="image">Select file</label>
                                         </div>
                                     </div>
                                 </div>

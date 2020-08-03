@@ -32,4 +32,8 @@ class t_advokat extends Model
         return $this->belongsTo(User::class,'user_id');
     }
 
+    public function konsultasi(){
+        return $this->hasMany(t_konsultasi::class, 'id');
+    }
+
 }

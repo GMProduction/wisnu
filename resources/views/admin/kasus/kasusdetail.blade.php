@@ -1,6 +1,15 @@
 @extends('admin.base')
 @section('content')
-
+    @if(\Illuminate\Support\Facades\Session::has('success'))
+        <script>
+            Swal.fire({
+                title: 'Success',
+                text: 'Berhasil Merubah Data',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+            })
+        </script>
+    @endif
     <style>
         .form-control[readonly] {
             background-color: white;
@@ -78,6 +87,9 @@
                                             <label class="form-control-label" for="kronologi">Kronologi Kasus</label>
                                             <textarea readonly id="kronologi" name="kronologi" class="form-control">{{$kasus->kronologi_kasus}}</textarea>
                                         </div>
+                                    </div>
+                                    <div class="col-lg-12 mb-3">
+                                        <a href="{{asset('uploads/bukti')}}/{{$kasus->image}}" target="_blank"><img src="{{asset('uploads/bukti')}}/{{$kasus->image}}" height="200"></a>
                                     </div>
 
                                     <hr class="my-4"/>
@@ -170,7 +182,7 @@
                                 <div class="form-group">
                                     <label class="form-control-label" for="advokat">Advokat</label>
                                     <select class="form-control" id="advokat" name="advokat" required>
-                                        <option value="">Pilih Nama Lelang</option>
+                                        <option value="">Pilih Nama Advokat</option>
                                         @foreach($advokats as $ad)
                                             <option value="{{ $ad->id }}">{{ $ad->nama_advokat }}</option>
                                         @endforeach
@@ -205,13 +217,13 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
-                                <div class="form-group">
-                                    <label class="form-control-label" for="layanan">Layanan</label>
-                                    <input type="text" id="layanan" name="layanan" value="" required
-                                           class="form-control">
-                                </div>
-                            </div>
+{{--                            <div class="col-lg-4">--}}
+{{--                                <div class="form-group">--}}
+{{--                                    <label class="form-control-label" for="layanan">Layanan</label>--}}
+{{--                                    <input type="text" id="layanan" name="layanan" value="" required--}}
+{{--                                           class="form-control">--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -230,17 +242,7 @@
 @section('script')
 
     <script>
-        $(document).ready(function () {
-            @if(\Illuminate\Support\Facades\Session::has('success'))
-            swal({
-                title: 'Success',
-                text: 'Kasus telah {{$status}}',
-                icon: 'success',
-                confirmButtonText: 'Ok'
-            });
-            @endif
 
-        });
 
         function modalTerima() {
             $('#modalTerima #advokat').val('');

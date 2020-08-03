@@ -6,6 +6,7 @@ use App\Helper\CustomController;
 use App\Http\Controllers\Controller;
 use App\model\t_kasus;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 
 /**
  * Class KasusController
@@ -51,6 +52,11 @@ class KasusController extends CustomController
             $kasus->layanan = $data['layanan'];
             $kasus->kronologi_kasus = $data['kronologi_kasus'];
             $kasus->jenis_kasus = $data['jenis_kasus'];
+            if ($this->request->hasFile('image')) {
+                $image = $this->generateImageName('image');
+                $kasus->image = $image;
+                $this->uploadImage('image', $image, 'bukti');
+            }
             $kasus->save();
 //            $this->update(t_kasus::class,$data);
             return redirect()->back()->with(['success' => 'success']);
@@ -67,7 +73,13 @@ class KasusController extends CustomController
             'jenis_kasus' => $this->postField('jenisKasus'),
             'id_pemohon' => auth()->id(),
         ];
+        if ($this->request->hasFile('image')) {
+            $image = $this->generateImageName('image');
+            $data   = Arr::add($data, 'image', $image);
+            $this->uploadImage('image', $image, 'bukti');
+        }
 
+//        dump($data);die();
         $this->insert(t_kasus::class, $data);
         return redirect()->back()->with(['success' => 'success']);
     }
